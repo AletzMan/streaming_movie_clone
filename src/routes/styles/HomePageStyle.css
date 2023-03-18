@@ -1,3 +1,8 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
+
 .homeheader {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,4 +49,81 @@
   align-items: center;
   gap: 0.3rem;
   justify-self: flex-end;
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  max-width: 22rem;
+}
+.promo__title {
+  background: linear-gradient(90deg, #5f1981, #FF00E5, #7823d5);
+  padding: 0.1rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+.promo__img {
+  width: 100%;
+}
+.promo__plan {
+  font-size: 1.6rem;
+  letter-spacing: 0.25rem;
+  font-weight: 400;
+}
+.promo__subscribe {
+  margin: 1.4rem 0 0.5rem 0;
+}
+.promo__restric {
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+.promo__video {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.button {
+  position: relative;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 4rem;
+  text-decoration: none;
+  border: 2px solid #7823d5;
+  color: #FFFFFF;
+  background: linear-gradient(345deg, #7823d5 0%, #9832ed 33%, transparent 66%, transparent 100%) 99% 50%/400% 400%;
+  transition: all 0.5s;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  border-radius: 4rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: all 0.5s;
+  z-index: -1;
+}
+.button:hover {
+  background-position: 1% 50%;
+  border: 2px solid #C600FF;
+  color: white;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/plans_background.png");
 }
