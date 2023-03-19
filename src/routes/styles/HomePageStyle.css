@@ -55,20 +55,27 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.promo__container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-self: center;
-  max-width: 22rem;
+  margin: 19em 0 6.5rem 0;
+  max-width: 21rem;
 }
 .promo__title {
   background: linear-gradient(90deg, #5f1981, #FF00E5, #7823d5);
   padding: 0.1rem 1.5rem;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.1rem;
 }
 .promo__img {
-  width: 100%;
+  width: 85%;
 }
 .promo__plan {
   font-size: 1.6rem;
@@ -86,9 +93,10 @@
 .promo__video {
   position: absolute;
   top: 0;
-  width: 100vw;
+  opacity: 0.4;
+  min-width: 100%;
+  min-width: 100%;
   z-index: -1;
-  opacity: 0.5;
 }
 
 .button {
@@ -103,6 +111,7 @@
   color: #FFFFFF;
   background: linear-gradient(345deg, #7823d5 0%, #9832ed 33%, transparent 66%, transparent 100%) 99% 50%/400% 400%;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .button::after {
   content: "";
@@ -125,5 +134,215 @@
 .plans {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem 0 0 0;
   background-image: url("../../assets/plans_background.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  box-shadow: 0 0 15px 50px #03032888, 0 0 20px 50px #03032888 inset;
+}
+.plans__title {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+.plans__button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 0.77rem;
+  margin: 2rem 0 0 0;
+  color: #FF00E5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  align-items: center;
+  width: 95%;
+  gap: 3rem;
+  margin: 5rem 0 0 0;
+}
+@media (max-width: 990px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    width: 90%;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.1rem 2.5rem 1.6rem 2.5rem;
+  background: linear-gradient(#ffffff10, transparent);
+  border-radius: 0.5rem;
+  width: 88%;
+  min-height: 21rem;
+  gap: 2.05rem;
+  margin: 0 0 0.7rem 0;
+}
+.card__true {
+  border: 3px solid #B535F6;
+}
+.card__title {
+  position: absolute;
+  top: -2rem;
+  background: linear-gradient(45deg, #7823d5, #B535F6);
+  width: 10rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.3rem 1.5rem;
+  border-radius: 2rem;
+}
+.card__months {
+  margin: 3rem 0 0 0;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.05rem;
+}
+.card__price {
+  font-size: 2rem;
+}
+.card__comp {
+  font-weight: 300;
+}
+.card__button {
+  width: 48%;
+  min-width: 10rem;
+  padding: 0.8rem 1rem;
+  letter-spacing: 0.02rem;
+}
+.card__restric {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.premieres {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(#05053644 0%, #B535F633 60%, #05053677 100%);
+}
+.premieres__title {
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  margin: 0 0 6rem 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.cardslider {
+  width: 100%;
+  background-color: #22229e33;
+}
+.cardslider__slidercontrol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards__premiere {
+  display: flex;
+  width: 500%;
+  background-color: #cef0e266;
+}
+
+.cardpremiere {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+.cardpremiere__title {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: flex-start;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+}
+.cardpremiere__date {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  justify-self: flex-start;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  background: linear-gradient(45deg, #7823d5, #FF00E5);
+}
+.cardpremiere__sinopsis {
+  grid-row: 3/4;
+  grid-column: 1/2;
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+.cardpremiere__image {
+  width: 100%;
+  height: 100%;
+  grid-row: 1/span 4;
+  grid-column: 2/3;
+  background-color: #78d6af;
+}
+
+.slidercontrol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: 1/2;
+  grid-column: 2/3;
+  row-gap: 2.5rem;
+  margin: 4rem 0 2rem 0;
+}
+.slidercontrol__numbercard {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  justify-self: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0.1rem;
+}
+.slidercontrol__buttoncontrol {
+  grid-row: 1/2;
+  cursor: pointer;
+  fill: #c5c5c5;
+  stroke: #c5c5c5;
+  stroke-width: 0.2rem;
+}
+.slidercontrol__buttoncontrol:hover {
+  fill: white;
+  stroke: white;
+}
+.slidercontrol__prev {
+  grid-column: 1/2;
+  justify-self: flex-end;
+  padding: 0.2rem 0 0 0.5rem;
+  transform: rotate(180deg);
+}
+.slidercontrol__next {
+  grid-column: 3/4;
+  align-self: flex-start;
+  padding: 0.2rem 0 0 0.5rem;
+}
+
+.subscribe {
+  grid-row: 2/3;
+  grid-column: 1/span 3;
+  justify-self: center;
+  width: 25%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
 }
