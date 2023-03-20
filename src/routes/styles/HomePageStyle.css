@@ -232,7 +232,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: linear-gradient(#05053644 0%, #B535F633 60%, #05053677 100%);
+  margin: 0.15rem 0 1rem 0;
+  padding: 3.2rem 0 0 0;
+  background: linear-gradient(#05053688 0%, #05053699 50%, #c82cf028 74%, #07074d77 90%, #05053677 100%);
 }
 .premieres__title {
   width: 80%;
@@ -246,7 +248,7 @@
 
 .cardslider {
   width: 100%;
-  background-color: #22229e33;
+  overflow: hidden;
 }
 .cardslider__slidercontrol {
   display: grid;
@@ -256,63 +258,147 @@
 .cards__premiere {
   display: flex;
   width: 500%;
-  background-color: #cef0e266;
+  transition: transform 0.4s ease-out;
 }
 
 .cardpremiere {
+  position: relative;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem;
+  padding: 0 10rem;
+  gap: 0.4rem;
+}
+@media (max-width: 1000px) {
+  .cardpremiere {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 575px) {
+  .cardpremiere {
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin-bottom: 16rem;
+  }
+}
+.cardpremiere__info {
+  display: grid;
+  grid-column: 1/2;
+  grid-row: 2/span 4;
+}
+@media (max-width: 575px) {
+  .cardpremiere__info {
+    position: absolute;
+    top: -5rem;
+    grid-column: 1/2;
+    grid-row: 3/span 4;
+    width: 90%;
+    justify-self: center;
+    border-radius: 0.7rem;
+    background: linear-gradient(90deg, #3b0970 0%, #aa0a9aaa 50%, #3b0970 100%);
+    padding: 0.9rem;
+  }
 }
 .cardpremiere__title {
   grid-row: 1/2;
   grid-column: 1/2;
   justify-self: flex-start;
-  font-size: 1.4rem;
+  align-self: flex-end;
+  text-align: left;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.15rem;
+  margin: 0;
+}
+@media (max-width: 575px) {
+  .cardpremiere__title {
+    justify-self: center;
+    margin: 0rem 0 0 0;
+  }
 }
 .cardpremiere__date {
-  grid-row: 2/3;
+  grid-row: 1/2;
   grid-column: 1/2;
   justify-self: flex-start;
-  padding: 0.3rem 0.5rem;
+  height: 1.2rem;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
   font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.05rem;
   background: linear-gradient(45deg, #7823d5, #FF00E5);
+}
+@media (max-width: 575px) {
+  .cardpremiere__date {
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.08rem;
+  }
 }
 .cardpremiere__sinopsis {
   grid-row: 3/4;
   grid-column: 1/2;
   text-align: left;
+  justify-self: left;
   font-weight: 300;
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   letter-spacing: 0.1rem;
   line-height: 1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  color: #FFFFFF;
+  margin: 0;
+}
+@media (max-width: 575px) {
+  .cardpremiere__sinopsis {
+    justify-self: center;
+    margin: 0.8rem 0 0 0;
+  }
 }
 .cardpremiere__image {
   width: 100%;
-  height: 100%;
   grid-row: 1/span 4;
   grid-column: 2/3;
-  background-color: #78d6af;
+  align-self: center;
+}
+@media (max-width: 575px) {
+  .cardpremiere__image {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+}
+.cardpremiere__actors {
+  display: flex;
+  gap: 1rem;
+  background-color: #9cd13b00;
+  grid-row: 4/5;
+}
+@media (max-width: 575px) {
+  .cardpremiere__actors {
+    justify-content: space-between;
+    margin: 0.6rem 0 4rem 0;
+    padding: 0 2rem;
+  }
 }
 
 .slidercontrol {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  place-items: center;
   grid-row: 1/2;
   grid-column: 2/3;
-  row-gap: 2.5rem;
-  margin: 4rem 0 2rem 0;
+  margin: 3rem 0 3rem 0;
 }
 .slidercontrol__numbercard {
   grid-row: 1/2;
   grid-column: 2/3;
   justify-self: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 300;
-  padding: 0.1rem;
+  padding: 0 0.6rem;
 }
 .slidercontrol__buttoncontrol {
   grid-row: 1/2;
@@ -328,21 +414,56 @@
 .slidercontrol__prev {
   grid-column: 1/2;
   justify-self: flex-end;
-  padding: 0.2rem 0 0 0.5rem;
+  align-self: center;
+  padding: 0.3rem 0 0 0;
+  background-color: transparent;
+  border: none;
   transform: rotate(180deg);
 }
 .slidercontrol__next {
   grid-column: 3/4;
-  align-self: flex-start;
-  padding: 0.2rem 0 0 0.5rem;
+  justify-self: flex-start;
+  padding: 0.6rem 0 0 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
 }
-
-.subscribe {
+.slidercontrol__subscribe {
   grid-row: 2/3;
   grid-column: 1/span 3;
   justify-self: center;
   width: 25%;
+  min-width: 12rem;
+  padding: 0.6rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.01rem;
+  margin: 0.7rem 0 2rem 0;
+}
+
+.actorpremiere {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.actorpremiere__image {
+  width: 4rem;
+  height: 4rem;
+}
+@media (max-width: 575px) {
+  .actorpremiere__image {
+    width: 100%;
+    height: 100%;
+    min-width: 3rem;
+    max-width: 5.5rem;
+  }
+}
+.actorpremiere__name {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.actorpremiere__character {
+  font-size: 0.8rem;
+  color: #df940a;
+  margin: 0.3rem 0 0 0;
 }

@@ -269,7 +269,9 @@ $color_secondary_font: #FFFFFF;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: linear-gradient(#05053644 0%, #B535F633 60%, #05053677 100%);
+    margin: 0.15rem 0 1rem 0;
+    padding: 3.2rem 0 0 0;
+    background: linear-gradient(#05053688 0%, #05053699 50%, #c82cf028 74%, #07074d77 90%, #05053677 100%);
 
     &__title {
         width: 80%;
@@ -284,7 +286,8 @@ $color_secondary_font: #FFFFFF;
 
 .cardslider {
     width: 100%;
-    background-color: #22229e33;
+    //background-color: #22229e33;
+    overflow: hidden;
 
     &__slidercontrol {
         display: grid;
@@ -296,53 +299,130 @@ $color_secondary_font: #FFFFFF;
 .cards__premiere {
     display: flex;
     width: 500%;
-    background-color: #cef0e266;
+    transition: transform 0.4s ease-out;
 }
 
 .cardpremiere {
+    position: relative;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 1rem;
+    padding: 0 10rem;
+    gap: 0.4rem;
+
+    @media (max-width: 1000px) {
+        padding: 0 1rem;
+    }
+
+    @media (max-width: 575px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin-bottom: 16rem;
+    }
+
+    &__info {
+        display: grid;
+        grid-column: 1 / 2;
+        grid-row: 2 / span 4;
+
+        @media (max-width: 575px) {
+            position: absolute;
+            top: -5rem;
+            grid-column: 1 / 2;
+            grid-row: 3 / span 4;
+            width: 90%;
+            justify-self: center;
+            border-radius: 0.7rem;
+            background: linear-gradient(90deg, #3b0970 0%, #aa0a9aaa 50%, #3b0970 100%);
+            padding: 0.9rem;
+        }
+    }
 
     &__title {
         grid-row: 1 / 2;
         grid-column: 1 / 2;
         justify-self: flex-start;
-        font-size: 1.4rem;
+        align-self: flex-end;
+        text-align: left;
+        font-size: 1.5rem;
         font-weight: 500;
         letter-spacing: 0.15rem;
+        margin: 0;
+
+        @media (max-width: 575px) {
+            justify-self: center;
+            margin: 0rem 0 0 0;
+        }
 
     }
 
     &__date {
-        grid-row: 2 / 3;
+        grid-row: 1 / 2;
         grid-column: 1 / 2;
         justify-self: flex-start;
-        padding: 0.3rem 0.5rem;
+        height: 1.2rem;
+        padding: 0.4rem 0.6rem;
+        text-align: center;
         font-size: 1rem;
+        font-weight: 600;
         letter-spacing: 0.05rem;
         background: linear-gradient(45deg, $color_terciary, $color_secondary);
+
+        @media (max-width: 575px) {
+            width: 100%;
+            justify-self: center;
+            align-self: center;
+            padding: 0.5rem 0;
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.08rem;
+        }
     }
 
     &__sinopsis {
         grid-row: 3 / 4;
         grid-column: 1 / 2;
         text-align: left;
+        justify-self: left;
         font-weight: 300;
-        font-size: 0.85rem;
+        font-size: 0.87rem;
         letter-spacing: 0.1rem;
         line-height: 1.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        color: $color_secondary_font;
+        margin: 0;
+
+        @media (max-width: 575px) {
+            justify-self: center;
+            margin: 0.8rem 0 0 0;
+        }
     }
 
     &__image {
         width: 100%;
-        height: 100%;
         grid-row: 1 / span 4;
         grid-column: 2 / 3;
-        background-color: #78d6af;
+        align-self: center;
+        //background-color: #78d6af;
+
+        @media (max-width: 575px) {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
     }
 
+    &__actors {
+        display: flex;
+        gap: 1rem;
+        background-color: #9cd13b00;
+        grid-row: 4 / 5;
 
+        @media (max-width: 575px) {
+            justify-content: space-between;
+            margin: 0.6rem 0 4rem 0;
+            padding: 0 2rem;
+        }
+    }
 
 
 }
@@ -352,20 +432,20 @@ $color_secondary_font: #FFFFFF;
 .slidercontrol {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    place-items: center;
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    row-gap: 2.5rem;
-    margin: 4rem 0 2rem 0;
-    
+    margin: 3rem 0 3rem 0;
+
     &__numbercard {
         grid-row: 1 / 2;
         grid-column: 2 / 3;
         justify-self: center;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: 300;
-        padding: 0.1rem;
+        padding: 0 0.6rem;
     }
-    
+
     &__buttoncontrol {
         grid-row: 1 / 2;
         cursor: pointer;
@@ -382,25 +462,64 @@ $color_secondary_font: #FFFFFF;
     &__prev {
         grid-column: 1 / 2;
         justify-self: flex-end;
-        padding: 0.2rem 0 0 0.5rem;
+        align-self: center;
+        padding: 0.3rem 0 0 0;
+        background-color: transparent;
+        border: none;
         transform: rotate(180deg);
     }
 
     &__next {
         grid-column: 3 / 4;
-        align-self: flex-start;
-        padding: 0.2rem 0 0 0.5rem;
+        justify-self: flex-start;
+        padding: 0.6rem 0 0 0;
+        margin: 0;
+        background-color: transparent;
+        border: none;
     }
 
+    &__subscribe {
+        grid-row: 2 / 3;
+        grid-column: 1 / span 3;
+        justify-self: center;
+        width: 25%;
+        min-width: 12rem;
+        padding: 0.6rem 0.6rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.01rem;
+        margin: 0.7rem 0 2rem 0;
+    }
 
 }
 
-.subscribe {
-    grid-row: 2 / 3;
-    grid-column: 1 / span 3;
-    justify-self: center;
-    width: 25%;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.01rem;
+.actorpremiere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+    &__image {
+        width: 4rem;
+        height: 4rem;
+
+        @media (max-width: 575px) {
+            width: 100%;
+            height: 100%;
+            min-width: 3rem;
+            max-width: 5.5rem;
+        }
+    }
+
+    &__name {
+        font-size: 0.75rem;
+        font-weight: 300;
+    }
+
+    &__character {
+        font-size: 0.8rem;
+        color: #df940a;
+        margin: 0.3rem 0 0 0;
+    }
 }
