@@ -169,13 +169,21 @@
 @media (max-width: 990px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    width: 90%;
+    justify-items: center;
+    width: 98%;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 575px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    width: 90%;
+    width: 93%;
+    justify-items: center;
+  }
+}
+@media (max-width: 400px) {
+  .cards {
+    width: 93%;
+    justify-items: flex-start;
   }
 }
 
@@ -192,8 +200,14 @@
   gap: 2.05rem;
   margin: 0 0 0.7rem 0;
 }
+@media (max-width: 575px) {
+  .card {
+    width: 85%;
+    padding: 0.1rem 2rem 1.6rem 2rem;
+  }
+}
 .card__true {
-  border: 3px solid #B535F6;
+  border: 2px solid #7823d5;
 }
 .card__title {
   position: absolute;
@@ -219,9 +233,15 @@
 }
 .card__button {
   width: 48%;
-  min-width: 10rem;
+  min-width: 19rem;
   padding: 0.8rem 1rem;
   letter-spacing: 0.02rem;
+}
+@media (max-width: 575px) {
+  .card__button {
+    min-width: 16rem;
+    width: 65%;
+  }
 }
 .card__restric {
   font-size: 0.8rem;
@@ -241,14 +261,27 @@
   justify-self: center;
   align-self: center;
   margin: 0 0 6rem 0;
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 2rem;
+  font-weight: 400;
   color: #FFFFFF;
+}
+@media (max-width: 575px) {
+  .premieres__title {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }
 
 .cardslider {
   width: 100%;
   overflow: hidden;
+}
+@media (max-width: 575px) {
+  .cardslider {
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
 }
 .cardslider__slidercontrol {
   display: grid;
@@ -258,6 +291,7 @@
 .cards__premiere {
   display: flex;
   width: 500%;
+  background: linear-gradient(270deg, #1b083ddd, #270a47dd);
   transition: transform 0.4s ease-out;
 }
 
@@ -279,9 +313,11 @@
     grid-template-columns: 1fr;
     padding: 0;
     margin-bottom: 16rem;
+    gap: 0rem;
   }
 }
 .cardpremiere__info {
+  position: relative;
   display: grid;
   grid-column: 1/2;
   grid-row: 2/span 4;
@@ -289,13 +325,13 @@
 @media (max-width: 575px) {
   .cardpremiere__info {
     position: absolute;
-    top: -5rem;
+    top: -5.3rem;
     grid-column: 1/2;
     grid-row: 3/span 4;
-    width: 90%;
+    width: 87%;
     justify-self: center;
-    border-radius: 0.7rem;
-    background: linear-gradient(90deg, #3b0970 0%, #aa0a9aaa 50%, #3b0970 100%);
+    border-radius: 0.7rem 0.7rem 0 0;
+    background: radial-gradient(50% 66.6% at 50% 20.45%, #C4069A65 0%, #3E1160dd 100%);
     padding: 0.9rem;
   }
 }
@@ -317,6 +353,7 @@
   }
 }
 .cardpremiere__date {
+  position: relative;
   grid-row: 1/2;
   grid-column: 1/2;
   justify-self: flex-start;
@@ -326,14 +363,15 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  background: linear-gradient(45deg, #7823d5, #FF00E5);
+  background: linear-gradient(45deg, #7823d5, #B535F6, #580970);
+  color: #FFFFFF;
 }
 @media (max-width: 575px) {
   .cardpremiere__date {
     width: 100%;
     justify-self: center;
-    align-self: center;
-    padding: 0.5rem 0;
+    align-self: flex-end;
+    padding: 0.55rem 0;
     font-size: 1.05rem;
     font-weight: 400;
     letter-spacing: 0.08rem;
@@ -358,16 +396,35 @@
     margin: 0.8rem 0 0 0;
   }
 }
-.cardpremiere__image {
+.cardpremiere__imagecontainer {
+  display: flex;
   width: 100%;
-  grid-row: 1/span 4;
+  height: 100%;
+  grid-row: 2/span 4;
   grid-column: 2/3;
   align-self: center;
+  justify-self: center;
+  padding: 0 0 3rem 0;
+}
+@media (max-width: 575px) {
+  .cardpremiere__imagecontainer {
+    position: relative;
+    overflow: hidden;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    width: 100%;
+    height: 28.5rem;
+  }
+}
+.cardpremiere__image {
+  width: 100%;
+  object-fit: contain;
 }
 @media (max-width: 575px) {
   .cardpremiere__image {
-    grid-row: 2/3;
-    grid-column: 1/2;
+    position: absolute;
+    left: 0rem;
+    width: 100%;
   }
 }
 .cardpremiere__actors {
@@ -379,7 +436,7 @@
 @media (max-width: 575px) {
   .cardpremiere__actors {
     justify-content: space-between;
-    margin: 0.6rem 0 4rem 0;
+    margin: 0.6rem 0 5rem 0;
     padding: 0 2rem;
   }
 }
@@ -391,6 +448,11 @@
   grid-row: 1/2;
   grid-column: 2/3;
   margin: 3rem 0 3rem 0;
+}
+@media (max-width: 575px) {
+  .slidercontrol {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 .slidercontrol__numbercard {
   grid-row: 1/2;
@@ -452,10 +514,8 @@
 }
 @media (max-width: 575px) {
   .actorpremiere__image {
-    width: 100%;
-    height: 100%;
-    min-width: 3rem;
-    max-width: 5.5rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 .actorpremiere__name {
@@ -466,4 +526,201 @@
   font-size: 0.8rem;
   color: #df940a;
   margin: 0.3rem 0 0 0;
+}
+
+.checks {
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+}
+.checks__check {
+  opacity: 0;
+  cursor: pointer;
+}
+.checks__check:checked ~ .checks__view {
+  opacity: 0.4;
+}
+.checks__view {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.4rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #f3eeee;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: opacity 0.2s linear 0.4s;
+}
+
+.free {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-self: center;
+  margin: 0 0 5rem 0;
+}
+.free__title {
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+.freeslider {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.freeslider__cards {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.free__button {
+  max-width: 10rem;
+  align-self: center;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  margin: 3rem 0 0 0;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  color: #020210;
+  background-color: #FFFFFF;
+  transition: all 0.3s;
+}
+.free__button:hover {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.cardfree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 14rem;
+  height: 20rem;
+  text-decoration: none;
+}
+.cardfree__image {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.cardfree__name {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+}
+.cardfree__freeview {
+  color: #FF00E5;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.experience {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 0.8rem;
+  align-self: center;
+  margin: 2rem 0 0 0;
+  width: 85%;
+}
+@media (max-width: 760px) {
+  .experience {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.experience__title {
+  grid-row: 1/2;
+  grid-column: 1/span 4;
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 300;
+  padding: 0;
+}
+.experience__disponibility {
+  grid-row: 2/3;
+  grid-column: 1/span 4;
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: #FFFFFF;
+}
+.experience__image {
+  grid-row: 3/4;
+  grid-column: 1/span 4;
+  width: 95%;
+  margin: 4rem 0 4rem 0;
+}
+.experience__paragraph {
+  position: relative;
+  grid-row: 4/5;
+  align-self: flex-start;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding: 0.5rem;
+  color: #FFFFFF;
+}
+@media (max-width: 760px) {
+  .experience__paragraph {
+    align-self: center;
+  }
+}
+.experience__paragraph::after {
+  position: absolute;
+  top: -1rem;
+  left: calc(50% - 1.5rem);
+  content: "";
+  width: 3rem;
+  height: 0.5rem;
+  border-top: 2px solid #FF00E5;
+}
+.experience__paragraph--one {
+  grid-column: 1/2;
+}
+.experience__paragraph--two {
+  grid-column: 2/3;
+}
+.experience__paragraph--three {
+  grid-column: 3/4;
+}
+.experience__paragraph--four {
+  grid-column: 4/5;
+}
+.experience__options {
+  grid-column: 1/span 4;
+}
+
+.experienceoptions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  padding: 0 0.2rem;
+  gap: 0rem;
+}
+@media (max-width: 760px) {
+  .experienceoptions {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.experienceoptions__image {
+  width: 35%;
+}
+@media (max-width: 760px) {
+  .experienceoptions__image {
+    width: 100%;
+  }
+}
+.experienceoptions__paragraph {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0 2rem;
 }

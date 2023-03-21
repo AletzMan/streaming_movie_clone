@@ -20,7 +20,8 @@ export const premieres = [
                 urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/cast_mariachis.png'
             }
         ],
-        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/Mariachis-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024'
+        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/Mariachis-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024',
+        urlImageMobil: 'https://hbomax-images.warnermediacdn.com/2023-02/Mariachis-cover-video-mob.jpg'
     },
     {
         title: 'Succession Temporada 4',
@@ -43,7 +44,8 @@ export const premieres = [
                 urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/cast_succesion_03.png'
             }
         ],
-        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/succession-4-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024'
+        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/succession-4-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024',
+        urlImageMobil: 'https://hbomax-images.warnermediacdn.com/2023-02/succession-s4-cover-video-mob.jpg'
     },
     {
         title: 'Perry Mason Temporada 2',
@@ -56,7 +58,8 @@ export const premieres = [
                 urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/cast_perry_mason_01.png'
             }
         ],
-        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/perry-mason-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024'
+        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/perry-mason-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024',
+        urlImageMobil: 'https://hbomax-images.warnermediacdn.com/2023-02/Perry-Mason-cover-video-mob.jpg'
     },
     {
         title: 'Superman & Lois Temporada 3',
@@ -79,7 +82,8 @@ export const premieres = [
                 urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/cast_superman_l_03.png'
             }
         ],
-        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/superman-and-lois-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024'
+        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/superman-and-lois-cover-video-dsk.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024',
+        urlImageMobil: 'https://hbomax-images.warnermediacdn.com/2023-02/superman-and-lois-cover-video-mob.jpg'
     },
     {
         title: 'Beast',
@@ -102,7 +106,34 @@ export const premieres = [
                 urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/beast%20cast.png'
             }
         ],
-        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/beast-cover-video-dsk-spa.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024'
+        urlImage: 'https://hbomax-images.warnermediacdn.com/2023-02/beast-cover-video-dsk-spa.jpg?host=wme-hbomax-drupal-prod.s3.amazonaws.com&w=1024',
+        urlImageMobil: 'https://hbomax-images.warnermediacdn.com/2023-02/Beast-cover-video-mob.jpg'
     }
     
+]
+export const freeEpisodes = [
+    {
+        name: 'BARRY',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/barry_s3.png'
+    },
+    {
+        name: 'SUPERMAN & LIOS',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/superman_and_lois.png'
+    },
+    {
+        name: 'CHERNOBYL',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/chernobyl.png'
+    },
+    {
+        name: 'THE SOPRANOS',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/the_sopranos.png'
+    },
+    {
+        name: 'THE WHITE LOTUS',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/the_white_lotus.png'
+    },
+    {
+        name: 'HACKS',
+        imageUrl: 'https://hbomax-images.warnermediacdn.com/2023-02/hacks_s2.png'
+    }
 ]
