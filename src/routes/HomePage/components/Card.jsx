@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Card = ({ isOffer, values }) => {
-    
+
     return (
-        <div className='plans__cards cards'>
+        <>
             {values &&
                 <div className={`cards__card card card__${isOffer}`}>
                     {isOffer && <h2 className='card__title'>AHORRA 3 MESES</h2>}
@@ -14,7 +14,7 @@ const Card = ({ isOffer, values }) => {
                     <NavLink className='card__button button'>ELIGE ESTE PLAN</NavLink>
                     {isOffer && <span className='card__restric'>*Requiere pago anticipado. Ahorro basado en plan estándar anual vs plan estándar mensual por 12 meses.</span>}
                 </div>}
-        </div>
+        </>
     );
 };
 

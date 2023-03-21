@@ -189,11 +189,12 @@ $color_secondary_font: #FFFFFF;
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     justify-items: center;
-    align-items: center;
-    width: 95%;
-    gap: 3rem;
+    align-items: flex-start;
+    width: 89%;
+    max-width: 1140px;
+    gap: 3.5rem;
     margin: 5rem 0 0 0;
 
     @media (max-width: 990px) {
@@ -220,12 +221,13 @@ $color_secondary_font: #FFFFFF;
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 88%;
+    max-width: 29rem;
+    min-height: 21rem;
     align-items: center;
     padding: 0.1rem 2.5rem 1.6rem 2.5rem;
     background: linear-gradient(#ffffff10, transparent);
     border-radius: 0.5rem;
-    width: 88%;
-    min-height: 21rem;
     gap: 2.05rem;
     margin: 0 0 0.7rem 0;
 
@@ -293,6 +295,7 @@ $color_secondary_font: #FFFFFF;
     padding: 3.2rem 0 0 0;
     background: linear-gradient(#05053688 0%, #05053699 50%, #c82cf028 74%, #07074d77 90%, #05053677 100%);
 
+
     &__title {
         width: 80%;
         justify-self: center;
@@ -310,11 +313,20 @@ $color_secondary_font: #FFFFFF;
 }
 
 .cardslider {
-    width: 100%;
+    width: 77%;
+    min-width: 1240px;
+    align-self: center;
     overflow: hidden;
     //background-color: #22229e33;
 
+    @media (max-width: 990px) {
+        width: 96%;
+        min-width: 620px;
+    }
+
     @media (max-width: 575px) {
+        width: 100%;
+        min-width: 320px;
         overflow-y: hidden;
         overflow-x: auto;
         scroll-behavior: smooth;
@@ -330,8 +342,7 @@ $color_secondary_font: #FFFFFF;
 .cards__premiere {
     display: flex;
     width: 500%;
-    background: linear-gradient(270deg, #1b083ddd, #270a47dd);
-    transition: transform 0.4s ease-out;
+    transition: transform 0.6s ease-out;
 }
 
 .cardpremiere {
@@ -620,8 +631,19 @@ $color_secondary_font: #FFFFFF;
     display: flex;
     flex-direction: column;
     width: 80%;
+    max-width: 1080px;
     align-self: center;
     margin: 0 0 5rem 0;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+        max-width: 1050px;
+    }
+
+    @media (max-width: 900px) {
+        width: 78%;
+        max-width: 1050px;
+    }
 
     &__title {
         font-size: 1.9rem;
@@ -642,8 +664,8 @@ $color_secondary_font: #FFFFFF;
         }
     }
 
-    &__button{      
-        max-width: 10rem;  
+    &__button {
+        max-width: 10rem;
         align-self: center;
         text-decoration: none;
         padding: 0.5rem 1.5rem;
@@ -656,7 +678,7 @@ $color_secondary_font: #FFFFFF;
         background-color: $color_secondary_font;
         transition: all 0.3s;
 
-        &:hover{
+        &:hover {
             background-color: transparent;
             color: $color_secondary_font;
             border-color: $color_secondary_font;
@@ -664,31 +686,38 @@ $color_secondary_font: #FFFFFF;
     }
 }
 
-.cardfree{
+.cardfree {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
-    width: 14rem;
+    width: 16rem;
     height: 20rem;
     text-decoration: none;
 
-    &__image{        
-        position: absolute;
-        width: 100%;
-        z-index: -1;
+    @media (max-width: 1200px) {
+        width: 13.7rem;
+        height: 20rem;
     }
 
-    &__name{
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    &__name {
         color: $color_secondary_font;
         font-size: 1.3rem;
         letter-spacing: 0.1rem;
         font-weight: 300;
     }
-    
-    &__freeview{
+
+    &__freeview {
         color: $color_secondary;
         font-weight: 600;
         letter-spacing: 0.05rem;
@@ -696,7 +725,7 @@ $color_secondary_font: #FFFFFF;
 }
 
 
-.experience{
+.experience {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
@@ -704,13 +733,14 @@ $color_secondary_font: #FFFFFF;
     align-self: center;
     margin: 2rem 0 0 0;
     width: 85%;
+    max-width: 1250px;
 
     @media (max-width: 760px) {
         display: flex;
         flex-direction: column;
     }
 
-    &__title{
+    &__title {
         grid-row: 1 / 2;
         grid-column: 1 / span 4;
         margin: 0;
@@ -719,7 +749,7 @@ $color_secondary_font: #FFFFFF;
         padding: 0;
     }
 
-    &__disponibility{
+    &__disponibility {
         grid-row: 2 / 3;
         grid-column: 1 / span 4;
         font-size: 0.75rem;
@@ -727,14 +757,18 @@ $color_secondary_font: #FFFFFF;
         color: $color_secondary_font;
     }
 
-    &__image{
+    &__image {
         grid-row: 3 / 4;
         grid-column: 1 / span 4;
-        width: 95%;
+        width: 81%;
         margin: 4rem 0 4rem 0;
+
+        @media (max-width: 760px) {
+            width: 95%;
+        }
     }
 
-    &__paragraph{
+    &__paragraph {
         position: relative;
         grid-row: 4 / 5;
         align-self: flex-start;
@@ -746,7 +780,7 @@ $color_secondary_font: #FFFFFF;
         @media (max-width:760px) {
             align-self: center;
         }
-        
+
         &::after {
             position: absolute;
             top: -1rem;
@@ -757,30 +791,33 @@ $color_secondary_font: #FFFFFF;
             border-top: 2px solid $color_secondary;
         }
 
-        &--one{
+        &--one {
             grid-column: 1 / 2;
         }
-        &--two{
+
+        &--two {
             grid-column: 2 / 3;
         }
-        &--three{
+
+        &--three {
             grid-column: 3 / 4;
         }
-        &--four{
+
+        &--four {
             grid-column: 4 / 5;
         }
     }
 
-    &__options{
+    &__options {
         grid-column: 1 / span 4;
     }
 }
 
-.experienceoptions{
-    width: 100%;
+.experienceoptions {
+    width: 90%;
     display: flex;
     align-items: center;
-    justify-self: flex-end;
+    justify-self: flex-start;
     padding: 0 0.2rem;
     gap: 0rem;
 
@@ -789,17 +826,189 @@ $color_secondary_font: #FFFFFF;
         flex-direction: column;
     }
 
-    &__image{
+    &__image {
         width: 35%;
 
         @media (max-width: 760px) {
-            width: 100%;
+            width: 80%;
         }
     }
 
-    &__paragraph{
+    &__paragraph {
         font-size: 2rem;
         font-weight: 300;
         padding: 0 2rem;
     }
+}
+
+
+
+.discover {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 85%;
+    max-width: 1150px;
+    margin: 2rem 0;
+
+    @media (max-width: 900px) {
+        width: 90%;
+    }
+
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &__movies {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        gap: 1rem;
+
+        @media (max-width: 760px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__button {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0.6rem;
+        transition: all 0.4s;
+        cursor: pointer;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            justify-self: flex-start;
+        }
+
+        &:hover>.discover__image--normal {
+            opacity: 0;
+        }
+
+        &:hover>.discover__image--hover {
+            opacity: 1;
+        }
+    }
+
+    &__image {
+
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s;
+        object-fit: contain;
+        border: none;
+
+        &--hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+
+    }
+}
+
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 1240px;
+    align-self: center;
+    margin: 8rem 0;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
+
+
+.question {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #030328;
+
+    &__button {
+        position: relative;
+        width: 100%;
+        grid-row: 1 / 2;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 6fr 0.5fr;
+        border-bottom: 1px solid #c5c5c566;
+    }
+
+    &__text {
+        justify-self: flex-start;
+        font-size: 1.3rem;
+        font-weight: 300;
+        padding: 1rem 0;
+        text-align: left;
+        color: $color_primary_font;
+    }
+
+    &__response {
+        grid-row: 2 / 3;
+        justify-self: flex-start;
+        text-align: left;
+        font-size: 1.3rem;
+        font-weight: 300;
+        padding: 1rem 0 0 0;
+        letter-spacing: 0.06rem;
+        height: 0rem;
+        opacity: 0;
+        transition: all 0.4s;
+        
+        &--true{
+            height: 12rem;
+            opacity: 1;
+        }
+    }
+
+    &__checkbox {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 3rem;
+        z-index: 1;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked~.question__button>.question__text~.question__svg>.question__svg--lineone {
+            transform: rotate(180deg);
+        }
+        &:checked~.question__button>.question__text~.question__svg>.question__svg--linetwo {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: center;
+        width: 1.7rem;
+        height: 1.7rem;
+        stroke: $color_primary_font;
+        stroke-width: 0.6rem;
+
+        &--line {
+            transform-origin: center;
+            transition: transform 0.4s;
+        }
+    }
+
+
 }
