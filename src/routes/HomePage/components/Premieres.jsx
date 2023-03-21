@@ -1,4 +1,3 @@
-import React from 'react';
 import { premieres } from '../../../services/dataMovies';
 import { CardPremiere } from './CardPremiere';
 import { SliderControl } from './SliderControl';
@@ -15,8 +14,8 @@ const Premieres = () => {
                     <CardPremiere data={premieres[3]} />
                     <CardPremiere data={premieres[4]} />
                 </div>
-                <SliderControl />
             </div>
+                <SliderControl />
         </section>
     );
 };
