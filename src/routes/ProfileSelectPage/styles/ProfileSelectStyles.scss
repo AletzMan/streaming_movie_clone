@@ -1,0 +1,140 @@
+$color_primary: #B535F6;
+$color_secondary: #FF00E5;
+$color_terciary: #7823d5;
+$color_button: #9832ed;
+$color_button_secondary: #C600FF;
+$color_background: #030328;
+$color_background_secondary: #020210;
+$color_primary_font: #9e86ff;
+$color_secondary_font: #FFFFFF;
+
+
+.profileselect {
+    width: 100%;
+    height: 100vh;
+    min-width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url('https://play.hbomax.com/390f9937ad43fc0e763143a8fcd3fb0a.png');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__link {
+        width: 100%;
+        margin: 0;
+
+    }
+
+    &__logo {
+        width: 10rem;
+        margin: 1rem 0 0 0;
+    }
+
+    &__title {
+        font-weight: 400;
+    }
+
+    &__manage {
+        width: 10rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.7rem;
+        margin: 0 0 2rem 0;
+        align-self: center;
+        color: $color_secondary_font;
+        border-radius: 0.2rem;
+
+        &:hover {
+            background-color: #FFFFFF40;
+        }
+    }
+
+}
+
+@keyframes animationProfiles {
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+.profiles {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0rem 0 5rem 0;
+    justify-self: center;
+    text-decoration: none;
+    color: $color_secondary_font;
+    font-weight: 400;
+    transition: transform 0.3s;
+    animation: animationProfiles 0.4s ;
+
+    &__container {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        column-gap: 3rem;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &__logo {
+        position: relative;
+        width: 8.5rem;
+        height: 8.5rem;
+        border-radius: 50%;
+        background: linear-gradient(120deg, #f7a6f7, #b90fb9);
+        z-index: 0;
+
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0.25rem;
+            top: 0.25rem;
+            height: 8rem;
+            width: 8rem;
+            z-index: 2;
+            border-radius: 50%;
+            font-size: 5rem;
+            font-weight: 300;
+            background-color: #350a23;
+        }
+    }
+
+    &__initial {
+        font-size: 3.5rem;
+        font-weight: 300;
+        position: absolute;
+        left: calc(50% - 1.1rem);
+        top: calc(50% - 3.2rem);
+    }
+
+    &__name {
+        margin: 1rem 0 0 0;
+    }
+}
+
+.addbuttons {
+    display: flex;
+    gap: 1rem;
+    align-self: center;
+
+    &__button {
+        padding: 0.9rem 1.5rem;
+        text-decoration: none;
+        border-radius: 0.2rem;
+        border: 2px solid transparent;
+        color: $color_secondary_font;
+        background-color: #4b4650;
+
+        &:hover {
+            background-color: #0f0f0f;
+            border-color: $color_terciary;
+        }
+    }
+}

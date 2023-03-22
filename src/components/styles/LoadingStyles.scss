@@ -1,0 +1,60 @@
+$color_primary: #B535F6;
+$color_secondary: #FF00E5;
+$color_terciary: #7823d5;
+$color_button: #9832ed;
+$color_button_secondary: #C600FF;
+$color_background: #030328;
+$color_background_secondary: #020210;
+$color_primary_font: #9e86ff;
+$color_secondary_font: #FFFFFF;
+
+
+.loading {
+    width: 8%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+
+    &__circle {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-color: #FFFFFFbb;
+        animation: loading 2s infinite;
+        transform: translateX(-4rem);
+
+        &--first{
+            animation-delay: 0s;
+        }
+        &--second{
+            animation-delay: 0.5s;
+            
+        }
+        &--third{
+            animation-delay: 1s;
+
+        }
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-4rem);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(4rem);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateX(-4rem);
+        opacity: 0.1;
+    }
+
+}

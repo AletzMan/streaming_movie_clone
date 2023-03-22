@@ -1,4 +1,4 @@
-import { freeEpisodes } from "../../../services/dataMovies";
+import { freeEpisodes } from "../../../../services/dataMovies";
 
 
 const MovieFree = ({info}) => {

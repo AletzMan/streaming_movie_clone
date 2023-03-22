@@ -1,7 +1,7 @@
 import React from 'react';
-import promo from '../../../assets/promo.png';
+import promo from '../../../../assets/promo.png';
 import { NavLink } from 'react-router-dom';
-import videoIntro from '../../../assets/videos/intro-vid.mp4';
+import videoIntro from '../../../../assets/videos/intro-vid.mp4';
 
 const Promo = () => {
     return (

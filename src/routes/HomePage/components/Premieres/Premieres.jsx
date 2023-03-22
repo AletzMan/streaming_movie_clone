@@ -1,4 +1,4 @@
-import { premieres } from '../../../services/dataMovies';
+import { premieres } from '../../../../services/dataMovies';
 import { CardPremiere } from './CardPremiere';
 import { SliderControl } from './SliderControl';
 
