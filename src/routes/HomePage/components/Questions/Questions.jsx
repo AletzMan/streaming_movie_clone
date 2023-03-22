@@ -1,5 +1,5 @@
 import uuid from "react-uuid";
-import { questions } from "../../../services/dataMovies";
+import { questions } from "../../../../services/dataMovies";
 import { Question } from "./Question";
 
 const Questions = () => {

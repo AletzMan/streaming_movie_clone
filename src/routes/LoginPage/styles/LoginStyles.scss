@@ -1,0 +1,127 @@
+$color_primary: #B535F6;
+$color_secondary: #FF00E5;
+$color_terciary: #7823d5;
+$color_button: #9832ed;
+$color_button_secondary: #C600FF;
+$color_background: #030328;
+$color_background_secondary: #020210;
+$color_primary_font: #9e86ff;
+$color_secondary_font: #FFFFFF;
+
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.8rem 0 9.5rem 0;
+
+    &__title{
+        font-size: 2.1rem;
+        font-weight: 300;
+        margin: 1rem 0 0.6rem 0;
+    }
+
+    &__button{
+        width: 50%;
+        max-width: 25rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 300;
+        border-radius: 3rem;
+        background-color: transparent;
+        border: 2px solid #FFFFFF;
+        letter-spacing: 0.06rem;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: border-color 0.3s;
+
+        @media (max-width: 575px) {
+            width: 75%;
+            padding: 0.5rem 2rem;
+        }
+
+        &:hover{
+            border-color: $color_terciary;
+        }
+    }
+
+    &__notaccount{
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: $color_secondary_font;
+    }
+
+    &__register{
+        margin: 0 0 0 0.2rem;
+        text-decoration: none;
+        color: #bfb3f7;
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 27rem;
+    min-width: 22rem;
+    align-items: flex-start;
+
+    &__label {
+        font-size: 0.97rem;
+        letter-spacing: 0.03rem;
+        font-weight: 100;
+        margin: 0.8rem 0 0 0;
+        color: #AAAAAA;
+    }
+
+    &__input{
+        width: 100%;
+        border: none;
+        padding: 0.7rem 0;
+        font-size: 1.1rem;
+        font-weight: 100;
+        margin: 0 0 0.7rem 0;
+        border-bottom: 2px solid #e4e0e099;
+        background-color: transparent;
+    }
+
+    &__containerpass{
+        position: relative;
+        width: 100%;
+
+    }
+
+    &__eye{
+        position: absolute;
+        right: 0;
+    }
+
+    &__submit{
+        width: 70%;
+        padding: 1.1rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        font-weight: 400;
+        align-self: center;
+        margin: 2rem 0 1rem 0;
+        text-transform: uppercase;
+        border: none;
+        background-color: #7f23d5;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        
+        @media (max-width: 575px) {
+            width: 81%;
+        }
+
+        &:hover{
+            background-color: #9a44eb;
+        }
+    }
+}

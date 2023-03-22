@@ -1,11 +1,13 @@
-import { HeaderHome } from './components/HeaderHome';
-import { Promo } from './components/Promo';
-import { Plans } from './components/Plans';
-import { Premieres } from './components/Premieres';
-import { Free } from './components/Free';
-import { Experience } from './components/Experience';
-import { Discover } from './components/Discover';
-import { Questions } from './components/Questions';
+import { HeaderHome } from './components/HeaderHome/HeaderHome';
+import { Promo } from './components/Promo/Promo';
+import { Plans } from './components/Plans/Plans';
+import { Premieres } from './components/Premieres/Premieres';
+import { Free } from './components/FreeSection/Free';
+import { Experience } from './components/Experience/Experience';
+import { Discover } from './components/Discover/Discover';
+import { Questions } from './components/Questions/Questions';
+import { FooterHomePage } from './components/Footer/FooterHomePage';
+import './styles/HomePageStyle.css';
 
 function HomePage() {
 
@@ -20,7 +22,7 @@ function HomePage() {
             <Experience />
             <Discover />
             <Questions />
-
+            <FooterHomePage />
         </main>
     );
 }

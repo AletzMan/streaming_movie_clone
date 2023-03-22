@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
-import { freeEpisodes } from "../../../services/dataMovies";
+import { freeEpisodes } from "../../../../services/dataMovies";
 import { MovieFree } from "./MovieFree";
 
 const Free = () => {

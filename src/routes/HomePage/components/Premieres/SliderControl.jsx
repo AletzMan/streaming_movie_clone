@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowNext } from '../../../assets/SVG/SVGFiles';
+import { ArrowNext } from '../../../../assets/SVG/SVGFiles';
 
 const SliderControl = () => {
     const [positionSlider, setPositionSlider] = useState(0)
@@ -7,40 +7,32 @@ const SliderControl = () => {
     const [currentSlider, setCurrentSilder] = useState(0)
     const [witdthState, setWidthState] = useState(window.innerWidth);
     const [defaultChecked, setDefaultChecked] = useState([true, false, false, false, false]);
+    let scrollWidthSlider = 375;
 
     const resizeWindow = () => {
         setWidthState(window.innerWidth);
     }
     useEffect(() => {
         window.addEventListener("resize", resizeWindow);
+        scrollWidthSlider = document.querySelector('.cardpremiere').getBoundingClientRect().width;
         return () => {
             window.removeEventListener("resize", resizeWindow);
         };
     }, [resizeWindow]);
     
-    const scrollSlider = (e) => {
-        console.log(e)
-    }
-
-    useEffect(() => {
-        document.querySelector('.cardslider').addEventListener("touchend", scrollSlider);
-        return () => {
-            document.querySelector('.cardslider').removeEventListener("touchend", scrollSlider);
-        };
-    }, [scrollSlider]);
-
+    
 
     const prevSlider = () => {
         setPositionSlider(prevState => prevState += 20);
         setCurrentSilder(prevState => prevState - 1)
         updateCurrentSlider(currentSlider)
-        setPositionSliderScroll(currentSlider * 375);
+        setPositionSliderScroll(currentSlider * scrollWidthSlider);
     }
     const nextSlider = () => {
         setPositionSlider(prevState => prevState -= 20);
         setCurrentSilder(prevState => prevState + 1)
         updateCurrentSlider(currentSlider)
-        setPositionSliderScroll(currentSlider * 375);
+        setPositionSliderScroll(currentSlider * scrollWidthSlider);
     }
 
     const goToSlider = (number) => {
@@ -48,7 +40,7 @@ const SliderControl = () => {
             let valuePosition = number * (-20);
             setPositionSlider(valuePosition);
         } else {
-            let valuePosition = number * (375);
+            let valuePosition = number * (scrollWidthSlider);
             setPositionSliderScroll(valuePosition);
         }
 
