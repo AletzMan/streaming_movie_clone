@@ -16,14 +16,6 @@ $color_secondary_font: #FFFFFF;
     display: flex;
     justify-content: end;
     
-    &__main {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(#040449, #621886);
-    }
-
-    
     &__link{
         grid-column: 2 / 3;
     }

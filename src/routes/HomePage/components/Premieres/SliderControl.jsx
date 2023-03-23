@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { ArrowNext } from '../../../../assets/SVG/SVGFiles';
 
 const SliderControl = () => {
@@ -99,7 +100,7 @@ const SliderControl = () => {
                         </div>
                     </>}
             </div>
-            <button className='slidercontrol__subscribe button' >SUBSCRÍBETE AHORA</button>
+            <NavLink to={'plan-picker'} className='slidercontrol__subscribe button' >SUBSCRÍBETE AHORA</NavLink>
         </div>
     );
 };

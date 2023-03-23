@@ -1,0 +1,139 @@
+$color_primary: #B535F6;
+$color_secondary: #FF00E5;
+$color_terciary: #7823d5;
+$color_button: #9832ed;
+$color_button_secondary: #C600FF;
+$color_background: #030328;
+$color_background_secondary: #020210;
+$color_primary_font: #9e86ff;
+$color_secondary_font: #FFFFFF;
+
+.sliderrating {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__container {
+        width: 1900%;
+        display: flex;
+        flex-direction: row;
+        transition: all 0.7s ease-out;
+    }
+}
+
+.ratslider {
+    width: 100%;
+    position: relative;
+
+    &__backdrop {
+        width: 100%;
+        max-height: 43rem;
+        object-fit: cover;
+    }
+
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0.25rem;
+        height: 5rem;
+        gap: 1rem;
+        background: #1f1f1fbb;
+        padding: 0.5rem;
+        color: #ffffff;
+        backdrop-filter: blur(15px);
+
+    }
+
+    &__title {
+        position: absolute;
+        font-size: 3rem;
+        left: 0rem;
+        bottom: 5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: #1f1f1fbb;
+        padding: 0.3rem;
+        border-radius: 0 0.5rem 0 0;
+        color: #ffffff;
+        backdrop-filter: blur(15px);
+    }
+
+    &__sinopsis {
+        flex: 0 40%;
+        right:  8rem;
+        bottom: 2rem;
+        text-align: left;
+        width: 40%;
+        max-width: 25rem;
+    }
+
+    &__play {
+        flex: 0 15%;
+        left: 2rem;
+        bottom: 2rem;
+        width: 3.5rem;
+        height: 3.5rem;
+
+        &--icon {
+            width: 3.5rem;
+            fill: #FFFFFF;
+
+            &>path:nth-child(1) {
+                transition: all 0.2s;
+            }
+
+            &:hover>path:nth-child(1) {
+                fill: #9832ed;
+            }
+        }
+
+    }
+
+    &__logo {
+        flex: 0 15%;
+        width: 50%;
+        height: 3rem;
+        filter: invert(1);
+    }
+
+    &__info {
+        flex: 0 30%;
+        left: 7.5rem;
+        bottom: 2rem;
+        padding: 0.8rem 1.3rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 0.3rem;
+        border: 2px solid transparent;
+        color: $color_secondary_font;
+        background-color: #252525;
+        transition: all 0.2s;
+
+        &:hover {
+            border-color: $color_terciary;
+            background-color: #020210;
+        }
+    }
+}
+
+.controlsrating {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+
+    &__circle {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+    }
+}

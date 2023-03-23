@@ -11,7 +11,7 @@ const Promo = () => {
                     <span className='promo__title'>2023 LO TENDRÁ TODO</span>
                     <img className='promo__img' src={promo} alt='ahorra tres meses' />
                     <span className='promo__plan'>CON EL PLAN ANUAL</span>
-                    <NavLink className='promo__subscribe button' to={''} data='SUSCRÍBETE AHORA'>SUSCRÍBETE AHORA</NavLink>
+                    <NavLink className='promo__subscribe button' to={'plan-picker'} data='SUSCRÍBETE AHORA'>SUSCRÍBETE AHORA</NavLink>
                     <span className='promo__restric'>*aplica al plan prepago anual</span>
                 </div>
             </section>

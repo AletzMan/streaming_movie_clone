@@ -1,7 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Card = ({ isOffer, values }) => {
+const navigate = useNavigate();
+const handlerButtonPlan = () =>{
+    navigate('create-account', { state: values[1] });
+}
 
     return (
         <>
@@ -11,7 +15,7 @@ const Card = ({ isOffer, values }) => {
                     <span className='card__months'>{values[0]}</span>
                     <span className='card__price'>{values[1]}</span>
                     <span className='card__comp'>{values[2]}</span>
-                    <NavLink className='card__button button'>ELIGE ESTE PLAN</NavLink>
+                    <button onClick={handlerButtonPlan} className='card__button button'>ELIGE ESTE PLAN</button>
                     {isOffer && <span className='card__restric'>*Requiere pago anticipado. Ahorro basado en plan estándar anual vs plan estándar mensual por 12 meses.</span>}
                 </div>}
         </>
