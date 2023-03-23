@@ -30,7 +30,7 @@ export { InstagramLogo }
 const YoutubeLogo = () => {
     return (
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <path fill="#9e86ff" d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73Z" />
+            <path  fill="#9e86ff00" d="m10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73Z" />
         </svg>
     );
 };
@@ -74,5 +74,51 @@ const EyeIconHidden = ({className}) => {
     );
 };
 export { EyeIconHidden }
+
+const EditIcon = ({className}) => {
+    return (
+        <svg className={className} width="22" height="22" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3 23.7v-18h10.925l-2 2H5v14h14v-6.95l2-2V23.7H3Zm9-9Zm4.175-8.425l1.425 1.4l-6.6 6.6V15.7h1.4l6.625-6.625l1.425 1.4l-7.2 7.225H9v-4.25l7.175-7.175Zm4.275 4.2l-4.275-4.2l3.95-3.95l4.2 4.275l-3.875 3.875Z"/>
+        </svg>
+    );
+};
+export { EditIcon }
+
+const MenuIcon = ({className}) => {
+    return (
+        <svg width="27" height="27" viewBox="0 0 24 24">
+            <path fill="none" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.4" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+    );
+};
+export { MenuIcon }
+
+const SearchIcon = ({className}) => {
+    return (
+        <svg className={className} width="27" height="27" viewBox="0 0 24 24">
+           <path fill="none" stroke="#efefef" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m20 20l-4.05-4.05m0 0a7 7 0 1 0-9.9-9.9a7 7 0 0 0 9.9 9.9z"/>
+        </svg>
+    );
+};
+export { SearchIcon }
+
+const CloseIcon = ({className}) => {
+    return (
+        <svg className={className} width="512" height="512" viewBox="0 0 512 512">
+            <path fill="none" stroke="#efefef" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32" d="M368 368L144 144m224 0L144 368"/>
+        </svg>
+    );
+};
+export { CloseIcon }
+
+const PlayIcon = ({className}) => {
+    return (
+        <svg className={className}  viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+        </svg>
+    );
+};
+export { PlayIcon }
 
 

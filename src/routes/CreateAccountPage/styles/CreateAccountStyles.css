@@ -1,0 +1,160 @@
+.createaccount__main {
+  display: flex;
+  gap: 1rem;
+  height: 118vh;
+  margin-bottom: 3rem;
+}
+
+.newaccount {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 95%;
+  max-width: 40rem;
+  min-width: 25rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 575px) {
+  .newaccount {
+    min-width: 18rem;
+  }
+}
+.newaccount__form {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 2.5rem;
+}
+.newaccount__step {
+  width: 100%;
+  margin: 2.2rem 0 1.2rem 0;
+}
+.newaccount__title {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.newaccount__subtitle {
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin: 0 0 3rem 0;
+}
+.newaccount__privacy {
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: left;
+  transform: translateY(-1.5rem);
+}
+
+.contprice {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: #03032888;
+  border-radius: 0.5rem;
+  padding: 1.3rem;
+}
+.contprice__name {
+  text-align: left;
+  flex: 70%;
+  font-size: 1.18rem;
+  font-weight: 400;
+}
+.contprice__price {
+  flex: 20%;
+  font-size: 1.18rem;
+  font-weight: 300;
+}
+.contprice__edit {
+  flex: 10%;
+  width: 2rem;
+}
+
+.inputform {
+  position: relative;
+  width: 100%;
+}
+.inputform__name {
+  flex: 0 47%;
+}
+@media (max-width: 575px) {
+  .inputform__name {
+    flex: 100%;
+  }
+}
+.inputform__lastname {
+  flex: 0 47%;
+  justify-self: right;
+}
+@media (max-width: 575px) {
+  .inputform__lastname {
+    flex: 100%;
+  }
+}
+.inputform__email {
+  flex: 0 100%;
+}
+.inputform__confemail {
+  flex: 0 100%;
+}
+.inputform__password {
+  flex: 0 100%;
+}
+.inputform__label {
+  position: absolute;
+  left: 0;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  font-size: 1.08rem;
+  transition: all 0.3s;
+}
+.inputform__label--true {
+  transform: translateY(-0.9rem);
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #FFFFFF99;
+}
+.inputform__input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #ccccccaa;
+  font-family: "Urbanist", sans-serif;
+  outline: none;
+}
+.inputform__input:focus {
+  border-color: #9e86ff;
+}
+
+.formnewaccount {
+  display: flex;
+  gap: 2rem;
+}
+.formnewaccount__sugguest {
+  font-size: 0.78rem;
+  font-weight: 200;
+  transform: translateY(-2rem);
+}
+
+.privacyaccount {
+  padding: 0rem 1rem 1rem 1rem;
+  background-color: #FFFFFF35;
+  border-radius: 0.5rem;
+  transform: translateY(-2rem);
+}
+.privacyaccount__politic {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.03rem;
+  text-align: left;
+  line-height: 1.1rem;
+}
+.privacyaccount__button {
+  width: 55%;
+  height: 3.5rem;
+  padding: 2em 1rem;
+}

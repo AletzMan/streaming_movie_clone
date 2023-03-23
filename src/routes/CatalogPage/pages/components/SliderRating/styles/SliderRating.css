@@ -1,0 +1,114 @@
+.sliderrating {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.sliderrating__container {
+  width: 1900%;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.7s ease-out;
+}
+
+.ratslider {
+  width: 100%;
+  position: relative;
+}
+.ratslider__backdrop {
+  width: 100%;
+  max-height: 43rem;
+  object-fit: cover;
+}
+.ratslider__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0.25rem;
+  height: 5rem;
+  gap: 1rem;
+  background: #1f1f1fbb;
+  padding: 0.5rem;
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+}
+.ratslider__title {
+  position: absolute;
+  font-size: 3rem;
+  left: 0rem;
+  bottom: 5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #1f1f1fbb;
+  padding: 0.3rem;
+  border-radius: 0 0.5rem 0 0;
+  color: #ffffff;
+  backdrop-filter: blur(15px);
+}
+.ratslider__sinopsis {
+  flex: 0 40%;
+  right: 8rem;
+  bottom: 2rem;
+  text-align: left;
+  width: 40%;
+  max-width: 25rem;
+}
+.ratslider__play {
+  flex: 0 15%;
+  left: 2rem;
+  bottom: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.ratslider__play--icon {
+  width: 3.5rem;
+  fill: #FFFFFF;
+}
+.ratslider__play--icon > path:nth-child(1) {
+  transition: all 0.2s;
+}
+.ratslider__play--icon:hover > path:nth-child(1) {
+  fill: #9832ed;
+}
+.ratslider__logo {
+  flex: 0 15%;
+  width: 50%;
+  height: 3rem;
+  filter: invert(1);
+}
+.ratslider__info {
+  flex: 0 30%;
+  left: 7.5rem;
+  bottom: 2rem;
+  padding: 0.8rem 1.3rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  border: 2px solid transparent;
+  color: #FFFFFF;
+  background-color: #252525;
+  transition: all 0.2s;
+}
+.ratslider__info:hover {
+  border-color: #7823d5;
+  background-color: #020210;
+}
+
+.controlsrating {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.controlsrating__circle {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}

@@ -16,7 +16,7 @@ const PlanPickerPage = () => {
     }, [])
 
     return (
-        <main className='planspage__main'>
+        <main className='planspage__main main'>
             {loading && <>
                 <HeaderPlans login={true} />
                 <SectionPlans />
