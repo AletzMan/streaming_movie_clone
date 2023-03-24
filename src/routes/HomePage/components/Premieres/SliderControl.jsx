@@ -20,8 +20,8 @@ const SliderControl = () => {
             window.removeEventListener("resize", resizeWindow);
         };
     }, [resizeWindow]);
-    
-    
+
+
 
     const prevSlider = () => {
         setPositionSlider(prevState => prevState += 20);

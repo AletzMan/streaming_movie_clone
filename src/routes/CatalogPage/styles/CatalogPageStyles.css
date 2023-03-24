@@ -1,5 +1,5 @@
 .catalog__section {
-  margin-top: 5rem;
+  margin-top: 0rem;
 }
 
 .headercatalog {
@@ -8,7 +8,9 @@
   width: 100%;
   height: 5rem;
   display: flex;
-  background-color: #000000aa;
+  background-color: #00000066;
+  backdrop-filter: blur(2px);
+  z-index: 2;
 }
 
 .navcatalog {
@@ -18,6 +20,11 @@
   justify-content: center;
   width: 100%;
   padding: 1rem 0 1rem 2rem;
+}
+@media (max-width: 600px) {
+  .navcatalog {
+    padding: 1rem 1rem 1rem 1rem;
+  }
 }
 .navcatalog__menu {
   background-color: transparent;
@@ -42,12 +49,24 @@
 }
 .navcatalog__movies {
   flex: 10%;
+  display: flex;
+}
+@media (max-width: 600px) {
+  .navcatalog__movies {
+    display: none;
+  }
 }
 .navcatalog__movies--movies {
   opacity: 1;
 }
 .navcatalog__series {
   flex: 10%;
+  display: flex;
+}
+@media (max-width: 600px) {
+  .navcatalog__series {
+    display: none;
+  }
 }
 .navcatalog__series--series {
   opacity: 1;
@@ -55,6 +74,12 @@
 .navcatalog__home {
   width: 10rem;
   flex: 50%;
+}
+@media (max-width: 600px) {
+  .navcatalog__home {
+    flex: 60%;
+    padding-left: 1.5rem;
+  }
 }
 .navcatalog__logo {
   width: 10rem;
@@ -79,6 +104,12 @@
   text-decoration: none;
   padding: 0 0 0 2.5rem;
 }
+@media (max-width: 600px) {
+  .userprofile {
+    flex: 8%;
+    padding: 0 0 0 0.5rem;
+  }
+}
 .userprofile:hover > .userprofile__name {
   opacity: 1;
 }
@@ -93,8 +124,8 @@
 .userprofile__logo::after {
   position: absolute;
   content: "";
-  left: 0.09rem;
-  top: 0.09rem;
+  left: 0.08rem;
+  top: 0.1rem;
   height: 1.8rem;
   width: 1.8rem;
   z-index: 2;
@@ -113,6 +144,15 @@
   font-weight: 600;
   color: #FFFFFF;
 }
+.userprofile__name {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .userprofile__name {
+    display: none;
+  }
+}
+
 .lateralmenu {
   position: relative;
   height: 100vh;
