@@ -9,15 +9,34 @@ $color_primary_font: #9e86ff;
 $color_secondary_font: #FFFFFF;
 
 .sliderrating {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
+    //overflow: hidden;
+
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
     &__container {
-        width: 1900%;
+        width: 600%;
         display: flex;
         flex-direction: row;
         transition: all 0.7s ease-out;
+
+        @media (max-width: 600px) {
+            height: 80vh;
+        }
     }
 }
 
@@ -29,57 +48,98 @@ $color_secondary_font: #FFFFFF;
         width: 100%;
         max-height: 43rem;
         object-fit: cover;
+
+        @media (max-width: 600px) {
+            height: 80vh;
+        }
+
     }
 
-    &__container{
+    &__container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         position: absolute;
+        flex-flow: row wrap;
         width: 100%;
-        bottom: 0.25rem;
-        height: 5rem;
-        gap: 1rem;
-        background: #1f1f1fbb;
+        bottom: 0.2rem;
+        height: 15rem;
+        gap: 0rem;
+        background: linear-gradient(transparent 0%, #00000088 20%, #000000 100%);
         padding: 0.5rem;
         color: #ffffff;
-        backdrop-filter: blur(15px);
 
+
+        @media (max-width: 600px) {
+            height: 20rem;
+            justify-content: center;
+            align-items: flex-end;
+            bottom: 0rem;
+        }
+    }
+
+    &__options {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: 1fr 1.5fr 1fr;
+        flex: 0 60%;
+
+        @media (max-width: 600px) {
+            flex: 0 100%;
+
+        }
     }
 
     &__title {
-        position: absolute;
+        grid-row: 1 / 2;
+        grid-column: 1 / span 3;
         font-size: 3rem;
-        left: 0rem;
-        bottom: 5rem;
         font-weight: 600;
+        text-align: left;
         text-transform: uppercase;
-        background: #1f1f1fbb;
         padding: 0.3rem;
         border-radius: 0 0.5rem 0 0;
         color: #ffffff;
-        backdrop-filter: blur(15px);
+
+        @media (max-width: 600px) {
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
     }
 
     &__sinopsis {
-        flex: 0 40%;
-        right:  8rem;
-        bottom: 2rem;
+        grid-row: 2 / 3;
+        grid-column: 1 / span 3;
         text-align: left;
-        width: 40%;
-        max-width: 25rem;
+        padding: 0.2rem;
+
+        @media (max-width: 600px) {
+            font-size: 0.85rem;
+            text-align: center;
+        }
     }
 
     &__play {
-        flex: 0 15%;
-        left: 2rem;
-        bottom: 2rem;
         width: 3.5rem;
         height: 3.5rem;
+        justify-self: center;
+        
+        @media (max-width: 600px) {
+            align-self: center;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
 
         &--icon {
             width: 3.5rem;
             fill: #FFFFFF;
+
+            @media (max-width: 600px) {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
 
             &>path:nth-child(1) {
                 transition: all 0.2s;
@@ -93,16 +153,16 @@ $color_secondary_font: #FFFFFF;
     }
 
     &__logo {
-        flex: 0 15%;
-        width: 50%;
-        height: 3rem;
+        position: absolute;
+        right: 0.5rem;
+        bottom: 0.5rem;
+        width: 4rem;
         filter: invert(1);
     }
 
     &__info {
-        flex: 0 30%;
-        left: 7.5rem;
-        bottom: 2rem;
+        max-width: 14rem;
+        max-height: 3.3rem;
         padding: 0.8rem 1.3rem;
         text-decoration: none;
         font-size: 1.2rem;
@@ -112,6 +172,14 @@ $color_secondary_font: #FFFFFF;
         color: $color_secondary_font;
         background-color: #252525;
         transition: all 0.2s;
+        
+        @media (max-width: 600px) {
+            align-self: center;
+            font-size: 0.9rem;
+            max-width: 12rem;
+            padding: 0.6rem 0.5rem;
+            justify-self: center;
+        }
 
         &:hover {
             border-color: $color_terciary;
@@ -126,14 +194,62 @@ $color_secondary_font: #FFFFFF;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
+    margin: 1rem 0 0 0;
+    gap: 1rem;
 
     &__circle {
         width: 0.55rem;
         height: 0.55rem;
-        border-radius: 50%;
-        background-color: #FFFFFF;
+        border-radius: 3rem;
         border: none;
         cursor: pointer;
+        background: #FFFFFF;
+        transition: all 2s;
+        opacity: 0.4;
+
+        &--true {
+            opacity: 1;
+        }
+        
+        &--false {
+            opacity: 0.25;            
+        }
+    }
+
+    &__button{
+        position: absolute;
+        width: 3rem;
+        top: calc(50% - 1.25rem);
+        background-color: transparent;
+        border: none ;
+        cursor: pointer;
+        opacity: 0.6;
+        border-radius: 0.4rem;
+        transition: all 0.3s;
+        background-color: #FFFFFF25;
+        mix-blend-mode:difference;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &:active{
+            opacity: 0.7;
+        }
+    }
+
+    &__arrow{
+        width: 2rem;        
+        mix-blend-mode:difference;
+    }
+
+    &__left{
+        left: 1rem;
+        transform: rotate(-90deg);
+    
+    }
+    &__right{
+        right: 1rem;
+        transform: rotate(90deg);
     }
 }
