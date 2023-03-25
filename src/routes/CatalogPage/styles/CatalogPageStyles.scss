@@ -8,7 +8,13 @@ $color_background_secondary: #020210;
 $color_primary_font: #9e86ff;
 $color_secondary_font: #FFFFFF;
 
-
+.cataloghome {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .catalog__section {
     margin-top: 0rem;
 }
@@ -68,7 +74,7 @@ $color_secondary_font: #FFFFFF;
         flex: 10%;
         display: flex;
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             display: none;
         }
 
@@ -81,7 +87,7 @@ $color_secondary_font: #FFFFFF;
         flex: 10%;
         display: flex;
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             display: none;
         }
 
@@ -130,7 +136,7 @@ $color_secondary_font: #FFFFFF;
     justify-self: right;
     gap: 0.6rem;
     text-decoration: none;
-    padding: 0 0 0 2.5rem;
+    padding: 0 0 0 0rem;
 
     @media (max-width: 600px) {
         flex: 8%;
@@ -145,23 +151,28 @@ $color_secondary_font: #FFFFFF;
         position: relative;
         width: 2rem;
         height: 2rem;
-        border-radius: 50%;
+        border-radius: 3rem;
         background: linear-gradient(120deg, #f7a6f7, #e011e0);
         z-index: 0;
 
         &::after {
             position: absolute;
             content: '';
-            left: 0.08rem;
+            left: 0.11rem;
             top: 0.1rem;
             height: 1.8rem;
             width: 1.8rem;
             z-index: 2;
-            border-radius: 50%;
+            border-radius: 3rem;
             font-size: 5rem;
             font-weight: 300;
             background-color: #350a23;
             z-index: 1;
+
+            @media (max-width: 600px) {
+                left: 0.12rem;
+                top: 0.1rem;
+            }
 
         }
     }

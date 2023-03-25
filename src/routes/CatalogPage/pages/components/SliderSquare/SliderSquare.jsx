@@ -1,37 +1,35 @@
 import './styles/SliderSquareStyles.css';
-import { genresMovies } from "../../../../../services/dataMovies";
 import { ArrowIcon } from '../../../../../services/svgFiles';
 import { useSetPositionSlider } from '../../hooks/UseSetPositionSlider';
+import { GeneralSlider } from './components/GeneralSlider';
+import { MovieSlider } from './components/MovieSlider';
 
 
-function SliderSquare({ className, jumpSlider, data }) {
-    const { goToSlider, currentSlider } = useSetPositionSlider(`.${className}__card`, `.${className}__container`, false);
+function SliderSquare({ className, data, title, isGeneral, isRating }) {
+    const dataDetails = data.filter(serie => serie.poster_path !== null);
+    const { goToSlider, currentSlider, sliderPositions } = useSetPositionSlider(`.${className}__slider`, `.${className}__container`, false, true);
 
-    console.log(currentSlider)
 
     return (
         <div className={`${className}__main`}>
+            <h2 className={`${className}__title`}>{title}</h2>
             <div className={`${className}__container`}>
                 <div className={`${className}__slider`}>
                     <div className={`${className}__cards`}>
-                        {data.map(genrer => (
-                            <button key={genrer.id} className={`${className}__card`}>
-                                <img className={`${className}__image`} src={genrer.imageUrl} alt="" />
-                                <div className={`${className}__containerlogo`}>
-                                    <img className={`${className}__logo`} src={genrer.logoUrl} alt="" />
-                                </div>
-                                <span className={`${className}__name`}>{genrer.name}</span>
-                                <div className={`${className}__cover`}></div>
-                            </button>
+                        {isGeneral && dataDetails.map(info => (
+                            <GeneralSlider key={info.id} className={className} info={info} />
+                        ))}
+                        {!isGeneral && dataDetails.map((info, index) => (
+                            <MovieSlider key={info.id}  className={className} info={info} rating={index} isRating={isRating}/>
                         ))}
                     </div>
                 </div>
             </div>
             <div className={`${className}__controls`}>
-                {currentSlider > 0 && <button className={`${className}__left ${className}__button`} onClick={() => goToSlider(currentSlider - jumpSlider)}>
+                {currentSlider > 0 && <button className={`${className}__left ${className}__button`} onClick={() => goToSlider(currentSlider - 1)}>
                     <ArrowIcon className={`slidersquare__button--arrow`} />
                 </button>}
-                {currentSlider < data.length - 4 && <button className={`${className}__right ${className}__button`} onClick={() => goToSlider(currentSlider + jumpSlider)}>
+                {currentSlider + 1 < sliderPositions && <button className={`${className}__right ${className}__button`} onClick={() => goToSlider(currentSlider + 1)}>
                     <ArrowIcon className={`${className}__button--arrow`} />
                 </button>}
             </div>

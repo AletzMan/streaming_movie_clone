@@ -21,7 +21,7 @@ const ProfileSelectPage = () => {
                 </a>
                 <h1 className="profileselect__title">¿Quien esta viendo?</h1>
                 <div className="profiles__container">
-                    <NavLink to='/catalog/home' className="profileselect__container profiles">
+                    <NavLink to='/catalog/movies' className="profileselect__container profiles">
                         <div className="profiles__logo"></div>
                         <span className="profiles__initial">A</span>
                         <span className="profiles__name">Aletz</span>

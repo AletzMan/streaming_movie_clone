@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
 
-export function useSetPositionSlider(sizeSlider, slider, activaAuto) {
+export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth) {
     const [witdthState, setWidthState] = useState(window.innerWidth);
     const [positionSlider, setPositionSlider] = useState(0);
     const [positionSliderScroll, setPositionSliderScroll] = useState(0);
     const [currentSlider, setCurrentSilder] = useState(0);
     const [touchStartPosition, setTouchStartPosition] = useState(0);
-    let scrollWidthSlider = 375;
+    const [sliderPositions, setSliderPosition] = useState(0);
+    let scrollWidthSlider = 0;
+    let sizeTotalSlider = 0;
     const resizeWindow = () => {
         setWidthState(window.innerWidth);
     }
+    //console.log(scrollWidthSlider)
+
 
     useEffect(() => {
         window.addEventListener("resize", resizeWindow);
-        scrollWidthSlider = document.querySelector(sizeSlider).getBoundingClientRect().width;
+        scrollWidthSlider = document.querySelector(slider).getBoundingClientRect().width;
+        sizeTotalSlider = document.querySelector(sizeSlider).scrollWidth;
+        if (isfullWidth) {
+            let paddingSlider = parseInt(window.getComputedStyle(document.querySelector(slider), null).getPropertyValue('padding-left').replace('px', ''));
+            
+            scrollWidthSlider = scrollWidthSlider - (paddingSlider * 0.6)
+        }
+        setSliderPosition(sizeTotalSlider / scrollWidthSlider);
+        
         return () => {
             window.removeEventListener("resize", resizeWindow);
         };
@@ -52,7 +64,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto) {
         setTimeout(() => {
             const finalPosScroll = document.querySelector(slider).scrollLeft;
             let posNear = [];
-            for (let index = 0; index < 6; index++) {
+            for (let index = 0; index < 7; index++) {
                 posNear.push(((widthSlider * 2) * index) - finalPosScroll);
             }
             const absValue = posNear.map(pos => Math.abs(pos));
@@ -65,7 +77,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto) {
     useEffect(() => {
         if (activaAuto) {
             const sliderAuto = setInterval(() => {
-                if (currentSlider < 5)
+                if (currentSlider < 7)
                     goToSlider(currentSlider + 1);
                 else
                     goToSlider(0)
@@ -81,5 +93,5 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto) {
         document.querySelector(slider).scroll(`${positionSliderScroll}`, 0);
     }, [positionSlider, positionSliderScroll])
 
-    return { goToSlider, setTouchSliderPosition, setTouchStart, currentSlider }
+    return { goToSlider, setTouchSliderPosition, setTouchStart, currentSlider, sliderPositions }
 }
