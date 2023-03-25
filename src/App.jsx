@@ -2,11 +2,7 @@
 import { HashRouter,  Route, Routes } from 'react-router-dom';
 import './App.css';
 import { CatalogPage } from './routes/CatalogPage/CatalogPage';
-import { CatalogHome } from './routes/CatalogPage/pages/CatalogHome/CatalogHome';
 import { CreateAccountPage } from './routes/CreateAccountPage/CreateAccountPage';
-import { CatalogMovies } from './routes/CatalogPage/pages/CatalogMovies/CatalogMovies';
-import { CatalogSeries } from './routes/CatalogPage/pages/CatalogSeries/CatalogSeries';
-import { CatalogSearch } from './routes/CatalogPage/pages/CatalogSearch/CatalogSearch';
 import { HomePage } from './routes/HomePage/HomePage';
 import { LoginPage } from './routes/LoginPage/LoginPage';
 import { PlanPickerPage } from './routes/PlanPickerPage/PlanPickerPage';

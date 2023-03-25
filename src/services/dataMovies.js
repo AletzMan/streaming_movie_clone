@@ -618,82 +618,837 @@ export const ratingMoves = [
     }
 ]
 
+export const popularSeries = [
+    {
+        "backdrop_path": "/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg",
+        "first_air_date": "2023-01-15",
+        "genre_ids": [
+            18
+        ],
+        "id": 100088,
+        "name": "The Last of Us",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Last of Us",
+        "overview": "Joel, uno de los pocos sobrevivientes, es contratado para sacar de contrabando a Ellie, una niña de 14 años, fuera de una opresiva zona de cuarentena. Lo que pareciera ser un pequeño trabajo, se convierte en un viaje brutal y desgarrador",
+        "popularity": 2593.84,
+        "poster_path": "/tNQWO6cNzQYCyvw36mUcAQQyf5F.jpg",
+        "vote_average": 8.8,
+        "vote_count": 2883
+    },
+    {
+        "backdrop_path": "/xgZ9AhvXqi9aSDWzCpoC9JAkLPY.jpg",
+        "first_air_date": "2019-01-01",
+        "genre_ids": [
+            35
+        ],
+        "id": 85425,
+        "name": "Drága örökösök",
+        "origin_country": [
+            "HU"
+        ],
+        "original_language": "hu",
+        "original_name": "Drága örökösök",
+        "overview": "",
+        "popularity": 1965.259,
+        "poster_path": "/r6B4o4Bgg7cQmt8XDsGsyYaLHmP.jpg",
+        "vote_average": 5.3,
+        "vote_count": 7
+    },
+    {
+        "backdrop_path": "/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg",
+        "first_air_date": "2019-11-12",
+        "genre_ids": [
+            10765,
+            10759,
+            18
+        ],
+        "id": 82856,
+        "name": "The Mandalorian",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Mandalorian",
+        "overview": "Ambientada tras la caída del Imperio y antes de la aparición de la Primera Orden, la serie sigue los pasos de un pistolero solitario en las aventuras que protagoniza en los confines de la galaxia, donde no alcanza la autoridad de la Nueva República.",
+        "popularity": 1657.667,
+        "poster_path": "/mzzZKJ4fvwib8Fty1tv4Vtp9R0b.jpg",
+        "vote_average": 8.5,
+        "vote_count": 8629
+    },
+    {
+        "backdrop_path": null,
+        "first_air_date": "2015-03-25",
+        "genre_ids": [
+            10764
+        ],
+        "id": 136598,
+        "name": "First Dates NL",
+        "origin_country": [
+            "NL"
+        ],
+        "original_language": "nl",
+        "original_name": "First Dates NL",
+        "overview": "",
+        "popularity": 1607.285,
+        "poster_path": "/48CLPsZ1HRFFSGfZx2SY7FHihyC.jpg",
+        "vote_average": 5,
+        "vote_count": 1
+    },
+    {
+        "backdrop_path": "/caGVr9Il2gj8bN4ow6qsLm60TxM.jpg",
+        "first_air_date": "2005-03-27",
+        "genre_ids": [
+            18
+        ],
+        "id": 1416,
+        "name": "Anatomía según Grey",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Grey's Anatomy",
+        "overview": "La vida de Meredith Grey no es nada fácil. Intenta tomar las riendas de su vida, aunque su trabajo sea de esos que te hacen la vida imposible. Meredith es una cirujana interna de primer año en el Hospital Grace de Seattle, el programa de prácticas más duro de la Facultad de Medicina de Harvard. Y ella lo va a comprobar. Pero no estará sola. Un elenco de compañeros de promoción tendrán que superar la misma prueba. Ahora están en el mundo real, son doctores del hospital. Y en un mundo donde la experiencia en el trabajo puede ser un factor de vida o muerte, todos ellos tendrán que lidiar con los altibajos de sus vidas personales.",
+        "popularity": 1266.706,
+        "poster_path": "/jPzW61WlkyHVdvm8dCQZveTvmgW.jpg",
+        "vote_average": 8.3,
+        "vote_count": 8996
+    },
+    {
+        "backdrop_path": "/3FLHePl9Y3n4BidLVjIA9qSRDOE.jpg",
+        "first_air_date": "2021-08-03",
+        "genre_ids": [
+            10766
+        ],
+        "id": 130542,
+        "name": "Bhagya Lakshmi",
+        "origin_country": [
+            "IN"
+        ],
+        "original_language": "hi",
+        "original_name": "Bhagya Lakshmi",
+        "overview": "",
+        "popularity": 1253.878,
+        "poster_path": "/7wuKrFvbX7kAIF0ctotARsqayPo.jpg",
+        "vote_average": 5,
+        "vote_count": 33
+    },
+    {
+        "backdrop_path": "/mAJ84W6I8I272Da87qplS2Dp9ST.jpg",
+        "first_air_date": "2023-01-23",
+        "genre_ids": [
+            9648,
+            18
+        ],
+        "id": 202250,
+        "name": "Dirty Linen",
+        "origin_country": [
+            "PH"
+        ],
+        "original_language": "tl",
+        "original_name": "Dirty Linen",
+        "overview": "",
+        "popularity": 1225.232,
+        "poster_path": "/ujlkQtHAVShWyWTloGU2Vh5Jbo9.jpg",
+        "vote_average": 4.9,
+        "vote_count": 8
+    },
+    {
+        "backdrop_path": "/1vgdmeW6keP47DQ1tGwfVCdUKqu.jpg",
+        "first_air_date": "2020-10-12",
+        "genre_ids": [
+            35
+        ],
+        "id": 111551,
+        "name": "Χαιρέτα μου τον Πλάτανο",
+        "origin_country": [
+            "GR"
+        ],
+        "original_language": "el",
+        "original_name": "Χαιρέτα μου τον Πλάτανο",
+        "overview": "",
+        "popularity": 1156.259,
+        "poster_path": "/vAu6or1W4G1q7wJxQfDmATtnIg.jpg",
+        "vote_average": 5.5,
+        "vote_count": 8
+    },
+    {
+        "backdrop_path": "/t2rAdgjSh0WYbXzdOB5zTDqzdCI.jpg",
+        "first_air_date": "2022-11-02",
+        "genre_ids": [
+            18
+        ],
+        "id": 213713,
+        "name": "Faltu",
+        "origin_country": [
+            "IN"
+        ],
+        "original_language": "hi",
+        "original_name": "Faltu",
+        "overview": "",
+        "popularity": 1046.003,
+        "poster_path": "/lgyFuoXs7GvKJN0mNm7z7OMOFuZ.jpg",
+        "vote_average": 5.3,
+        "vote_count": 13
+    },
+    {
+        "backdrop_path": "/jIV5weV19wH02rnuWyMtYI4dYC8.jpg",
+        "first_air_date": "2023-02-13",
+        "genre_ids": [
+            10759,
+            35,
+            18
+        ],
+        "id": 215803,
+        "name": "Batang Quiapo",
+        "origin_country": [
+            "PH"
+        ],
+        "original_language": "tl",
+        "original_name": "Batang Quiapo",
+        "overview": "",
+        "popularity": 1010.533,
+        "poster_path": "/9McqS8mgMf5NJCAKZIY6J1oOl8y.jpg",
+        "vote_average": 6.3,
+        "vote_count": 3
+    },
+    {
+        "backdrop_path": "/3n2TjKw3HrwDqgVgcynvantOfS3.jpg",
+        "first_air_date": "2023-01-04",
+        "genre_ids": [
+            18,
+            10751
+        ],
+        "id": 215103,
+        "name": "तेरी मेरी डोरियाँ",
+        "origin_country": [
+            "IN"
+        ],
+        "original_language": "hi",
+        "original_name": "तेरी मेरी डोरियाँ",
+        "overview": "",
+        "popularity": 1004.905,
+        "poster_path": "/4BHDmYiuSnNL3nqKIOzLJKYX4AN.jpg",
+        "vote_average": 8,
+        "vote_count": 2
+    },
+    {
+        "backdrop_path": "/dLLafkr4khRj00fvQjZ46oPsY43.jpg",
+        "first_air_date": "2022-11-28",
+        "genre_ids": [
+            18
+        ],
+        "id": 215315,
+        "name": "Rabb Se Hai Dua",
+        "origin_country": [
+            "IN"
+        ],
+        "original_language": "hi",
+        "original_name": "Rabb Se Hai Dua",
+        "overview": "",
+        "popularity": 972.355,
+        "poster_path": "/6ikbefd7VeopbBuGgioYMNU5bQj.jpg",
+        "vote_average": 10,
+        "vote_count": 1
+    },
+    {
+        "backdrop_path": "/iN9uULLaSx7h21tcR9io2dnARjw.jpg",
+        "first_air_date": "2013-04-15",
+        "genre_ids": [
+            80,
+            18,
+            10766
+        ],
+        "id": 44953,
+        "name": "El Señor de los Cielos",
+        "origin_country": [
+            "MX"
+        ],
+        "original_language": "es",
+        "original_name": "El señor de los cielos",
+        "overview": "El Señor de los Cielos reinventa y sigue la vida y los tiempos de Amado Carrillo Fuentes, un hombre que se convirtió en el jefe del cártel de Juárez, ambientada en los años 1990s. Amado Carrillo era apodado como \"el Señor de los Cielos \"(El Señor de los Cielos), debido a la gran flota de aviones que utilizaba para transportar la droga. También fue conocido por el lavado de más de 200 millones de dólares a través de Colombia para financiar su enorme flota de aviones. Se le describe como el narcotraficante más poderoso de su época. Murió en un hospital de México después de someterse a una cirugía plástica extensa para cambiar su apariencia. En sus últimos días, Carrillo estaba siendo rastreado por las autoridades mexicanas y estadounidenses. Está considerado como uno de los hombres más ricos de la historia de los criminales, con un valor neto estimado de 25 mil millones (25 billones en términos americanos) de dólares.",
+        "popularity": 963.758,
+        "poster_path": "/Ag7VUdnrRz5Qpq3Yn3E5OCvFnu0.jpg",
+        "vote_average": 7.9,
+        "vote_count": 2474
+    },
+    {
+        "backdrop_path": "/3r6rV0tGI2BtVgqc4e65Gh4hVXO.jpg",
+        "first_air_date": "2023-02-20",
+        "genre_ids": [
+            10766
+        ],
+        "id": 220992,
+        "name": "El amor invencible",
+        "origin_country": [
+            "MX"
+        ],
+        "original_language": "es",
+        "original_name": "El amor invencible",
+        "overview": "",
+        "popularity": 938.252,
+        "poster_path": "/5ea9hJqaImtakNpeet9DI2yhy4g.jpg",
+        "vote_average": 6,
+        "vote_count": 2
+    },
+    {
+        "backdrop_path": "/zJNEXWx3YyWGQioCbutFd5dcNYS.jpg",
+        "first_air_date": "2022-03-21",
+        "genre_ids": [
+            10766,
+            10759,
+            10751
+        ],
+        "id": 157059,
+        "name": "Poliana Moça",
+        "origin_country": [
+            "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Poliana Moça",
+        "overview": "",
+        "popularity": 936.071,
+        "poster_path": "/sSRFeVwpyUffmqvreVbbNILHYbY.jpg",
+        "vote_average": 6.5,
+        "vote_count": 22
+    },
+    {
+        "backdrop_path": "/nTB21wfQPX1IirpGXTmxr2VsWTC.jpg",
+        "first_air_date": "1955-11-26",
+        "genre_ids": [],
+        "id": 221053,
+        "name": "Zeit im Bild",
+        "origin_country": [
+            "DE"
+        ],
+        "original_language": "de",
+        "original_name": "Zeit im Bild",
+        "overview": "",
+        "popularity": 922.325,
+        "poster_path": "/axK66NpM828m1vdBvsfYZaXadIp.jpg",
+        "vote_average": 4,
+        "vote_count": 4
+    },
+    {
+        "backdrop_path": "/iQ6ANV7F7I6Lc8rTLSEwDkOO37Q.jpg",
+        "first_air_date": "1988-05-02",
+        "genre_ids": [],
+        "id": 221056,
+        "name": "Tirol Heute",
+        "origin_country": [
+            "DE"
+        ],
+        "original_language": "de",
+        "original_name": "Tirol Heute",
+        "overview": "",
+        "popularity": 909.278,
+        "poster_path": null,
+        "vote_average": 5,
+        "vote_count": 1
+    },
+    {
+        "backdrop_path": null,
+        "first_air_date": "2023-02-16",
+        "genre_ids": [
+            18
+        ],
+        "id": 221443,
+        "name": "星落凝结成糖",
+        "origin_country": [
+            "CN"
+        ],
+        "original_language": "zh",
+        "original_name": "星落凝结成糖",
+        "overview": "",
+        "popularity": 880.731,
+        "poster_path": "/gT0LvxbLSacXtLy27WmxBMwZjos.jpg",
+        "vote_average": 0,
+        "vote_count": 0
+    },
+    {
+        "backdrop_path": null,
+        "first_air_date": "2021-10-27",
+        "genre_ids": [
+            18
+        ],
+        "id": 197109,
+        "name": "ये रिश्ता क्या कहलाता है",
+        "origin_country": [
+            "IN"
+        ],
+        "original_language": "hi",
+        "original_name": "ये रिश्ता क्या कहलाता है",
+        "overview": "",
+        "popularity": 871.226,
+        "poster_path": "/6ZfiG4P7jivJV0wgcNMSiS2Owhh.jpg",
+        "vote_average": 4.9,
+        "vote_count": 16
+    },
+    {
+        "backdrop_path": "/4nXqYVnUJImG0HOAQ2QIryknuMC.jpg",
+        "first_air_date": "2023-03-14",
+        "genre_ids": [
+            10759,
+            18
+        ],
+        "id": 195868,
+        "name": "Gotham Knights",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Gotham Knights",
+        "overview": "",
+        "popularity": 840.454,
+        "poster_path": "/tbCGmkR3TRDug4weDnHEGCu3WEC.jpg",
+        "vote_average": 8.3,
+        "vote_count": 15
+    }
+]
 
-export const genresMovies = [
+export const trendingSeries = [
     {
-        "id": 28,
-        "name": "Acción"
+        "adult": false,
+        "backdrop_path": "/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg",
+        "id": 100088,
+        "name": "The Last of Us",
+        "original_language": "en",
+        "original_name": "The Last of Us",
+        "overview": "Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival.",
+        "poster_path": "/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 2372.319,
+        "first_air_date": "2023-01-15",
+        "vote_average": 8.773,
+        "vote_count": 2899,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 12,
-        "name": "Aventura"
+        "adult": false,
+        "backdrop_path": "/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg",
+        "id": 82856,
+        "name": "The Mandalorian",
+        "original_language": "en",
+        "original_name": "The Mandalorian",
+        "overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+        "poster_path": "/eU1i6eHXlzMOlEq0ku1Rzq7Y4wA.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765,
+            10759,
+            18
+        ],
+        "popularity": 1422.98,
+        "first_air_date": "2019-11-12",
+        "vote_average": 8.486,
+        "vote_count": 8635,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 16,
-        "name": "Animación"
+        "adult": false,
+        "backdrop_path": "/7vCSrzwqS5PEm0i5mHlkDfjHcnX.jpg",
+        "id": 136283,
+        "name": "The Glory",
+        "original_language": "ko",
+        "original_name": "더 글로리",
+        "overview": "After a childhood marked by pain and violence, a woman puts a carefully planned revenge scheme in motion.",
+        "poster_path": "/6jOpyXVzQyYL4QB12VRpHUxdwg1.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 423.688,
+        "first_air_date": "2022-12-30",
+        "vote_average": 8.613,
+        "vote_count": 301,
+        "origin_country": [
+            "KR"
+        ]
     },
     {
-        "id": 35,
-        "name": "Comedia"
+        "adult": false,
+        "backdrop_path": "/rqbCbjB19amtOtFQbb3K2lgm2zv.jpg",
+        "id": 1429,
+        "name": "Attack on Titan",
+        "original_language": "ja",
+        "original_name": "進撃の巨人",
+        "overview": "Several hundred years ago, humans were nearly exterminated by Titans. Titans are typically several stories tall, seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather than as a food source. A small percentage of humanity survived by walling themselves in a city protected by extremely high walls, even taller than the biggest Titans. Flash forward to the present and the city has not seen a Titan in over 100 years. Teenage boy Eren and his foster sister Mikasa witness something horrific as the city walls are destroyed by a Colossal Titan that appears out of thin air. As the smaller Titans flood the city, the two kids watch in horror as their mother is eaten alive. Eren vows that he will murder every single Titan and take revenge for all of mankind.",
+        "poster_path": "/sHim6U0ANsbzxcmNRYuIubBVQaz.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765,
+            16,
+            10759
+        ],
+        "popularity": 154.571,
+        "first_air_date": "2013-04-07",
+        "vote_average": 8.647,
+        "vote_count": 5069,
+        "origin_country": [
+            "JP"
+        ]
     },
     {
-        "id": 80,
-        "name": "Crimen"
+        "adult": false,
+        "backdrop_path": "/qzSjrYSZAWrjhg6Yf3hCcfJE4o0.jpg",
+        "id": 85720,
+        "name": "Shadow and Bone",
+        "original_language": "en",
+        "original_name": "Shadow and Bone",
+        "overview": "In a world cleaved in two by a massive barrier of perpetual darkness, a young soldier uncovers a power that might finally unite her country. But as she struggles to hone her power, dangerous forces plot against her. Thugs, thieves, assassins and saints are at war now, and it will take more than magic to survive.",
+        "poster_path": "/mS9O9mjPlwpLTne4JgQlDkgREWA.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18,
+            10765
+        ],
+        "popularity": 247.204,
+        "first_air_date": "2021-04-23",
+        "vote_average": 8.087,
+        "vote_count": 1025,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 99,
-        "name": "Documental"
+        "adult": false,
+        "backdrop_path": "/26uCzg0yigXqjcM9dCGCDihoXLM.jpg",
+        "id": 129552,
+        "name": "The Night Agent",
+        "original_language": "en",
+        "original_name": "The Night Agent",
+        "overview": "While monitoring an emergency line, a vigilant FBI agent answers a call that plunges him into a deadly conspiracy involving a mole at the White House.",
+        "poster_path": "/xjsx6rGEgHl2tUqkimo6Bz2KzVo.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18,
+            9648
+        ],
+        "popularity": 125.961,
+        "first_air_date": "2023-03-23",
+        "vote_average": 6.969,
+        "vote_count": 17,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 18,
-        "name": "Drama"
+        "adult": false,
+        "backdrop_path": "/tQZtXSYDzQUaASZYMfakoNo9DC3.jpg",
+        "id": 90027,
+        "name": "Carnival Row",
+        "original_language": "en",
+        "original_name": "Carnival Row",
+        "overview": "In a mystical and dark city filled with humans, fairies and other creatures, a police detective investigates a series of gruesome murders leveled against the fairy population. During his investigation, the detective becomes the prime suspect and must find the real killer to clear his name.",
+        "poster_path": "/jyhxT10e2z9IDsKoIQDKhyxSQJt.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765
+        ],
+        "popularity": 205.041,
+        "first_air_date": "2019-08-29",
+        "vote_average": 7.879,
+        "vote_count": 924,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 10751,
-        "name": "Familia"
+        "adult": false,
+        "backdrop_path": "/Abp35Z4fHCufCvYXURyfnKeaOON.jpg",
+        "id": 220116,
+        "name": "Swarm",
+        "original_language": "en",
+        "original_name": "Swarm",
+        "overview": "A young woman's obsession with a pop star takes a dark turn.",
+        "poster_path": "/5Byf0mciDQU8sMtw0pjsV3veKaq.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            35,
+            18
+        ],
+        "popularity": 132.801,
+        "first_air_date": "2023-03-16",
+        "vote_average": 7.727,
+        "vote_count": 22,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 14,
-        "name": "Fantasía"
+        "adult": false,
+        "backdrop_path": "/wImNeqxKsqmJ5OBw8j3I37GNFN3.jpg",
+        "id": 97546,
+        "name": "Ted Lasso",
+        "original_language": "en",
+        "original_name": "Ted Lasso",
+        "overview": "Ted Lasso, an American football coach, moves to England when he’s hired to manage a soccer team—despite having no experience. With cynical players and a doubtful town, will he get them to see the Ted Lasso Way?",
+        "poster_path": "/5fhZdwP1DVJ0FyVH6vrFdHwpXIn.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            35,
+            18
+        ],
+        "popularity": 268.786,
+        "first_air_date": "2020-08-14",
+        "vote_average": 8.475,
+        "vote_count": 912,
+        "origin_country": [
+            "GB"
+        ]
     },
     {
-        "id": 36,
-        "name": "Historia"
+        "adult": false,
+        "backdrop_path": "/cSlwoQCSgYryqC9yQLdtFpuDnfR.jpg",
+        "id": 138169,
+        "name": "Extrapolations",
+        "original_language": "en",
+        "original_name": "Extrapolations",
+        "overview": "Eight interconnected stories told over 33 years explore how our planet’s changing climate will affect family, work, faith—and survival.",
+        "poster_path": "/cBUS1OijCX2jzirgajIWt4TOgTK.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 115.413,
+        "first_air_date": "2023-03-16",
+        "vote_average": 5.4,
+        "vote_count": 11,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 27,
-        "name": "Terror"
+        "adult": false,
+        "backdrop_path": "/3gcfAQ2sBCqEAhPc5vJchACLpLi.jpg",
+        "id": 85949,
+        "name": "Star Trek: Picard",
+        "original_language": "en",
+        "original_name": "Star Trek: Picard",
+        "overview": "Set twenty years after the events of Star Trek Nemesis, we follow the now-retired Admiral Picard into the next chapter of his life.",
+        "poster_path": "/bONYUEn7iMFCebhDuqNG7hqqwoO.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765,
+            10759
+        ],
+        "popularity": 206.113,
+        "first_air_date": "2020-01-23",
+        "vote_average": 7.261,
+        "vote_count": 1408,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 10402,
-        "name": "Música"
+        "adult": false,
+        "backdrop_path": "/a6ptrTUH1c5OdWanjyYtAkOuYD0.jpg",
+        "id": 37854,
+        "name": "One Piece",
+        "original_language": "ja",
+        "original_name": "ワンピース",
+        "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \"Devil Fruit,\" decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he's surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+        "poster_path": "/e3NBGiAifW9Xt8xD5tpARskjccO.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10759,
+            35,
+            16
+        ],
+        "popularity": 137.441,
+        "first_air_date": "1999-10-20",
+        "vote_average": 8.714,
+        "vote_count": 3657,
+        "origin_country": [
+            "JP"
+        ]
     },
     {
-        "id": 9648,
-        "name": "Misterio"
+        "adult": false,
+        "backdrop_path": "/37NYkXhZBGgRHCCXLbIQXoJZUYS.jpg",
+        "id": 95555,
+        "name": "Daisy Jones & the Six",
+        "original_language": "en",
+        "original_name": "Daisy Jones & the Six",
+        "overview": "In 1977, Daisy Jones & The Six were on top of the world. Fronted by two charismatic lead singers — Daisy Jones and Billy Dunne — the band had risen from obscurity to fame. And then, after a sold-out show at Chicago's Soldier Field, they called it quits. Now, decades later, the band members finally agree to reveal the truth.",
+        "poster_path": "/ltfscPUljehY7IwGG85vij2TEbQ.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 203.365,
+        "first_air_date": "2023-03-02",
+        "vote_average": 8,
+        "vote_count": 22,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 10749,
-        "name": "Romance"
+        "adult": false,
+        "backdrop_path": "/69AzHswg1LVjuiIid9l3HRsulfp.jpg",
+        "id": 216322,
+        "name": "Sky High: The Series",
+        "original_language": "es",
+        "original_name": "Hasta el cielo: La serie",
+        "overview": "To remain independent of her father, who is a stolen goods trafficker, a newly widowed single mom joins her late husband’s gang of smash-and-grab thieves.",
+        "poster_path": "/q35B5iw1h1Xwg1ziMUZZJTlWjDJ.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18,
+            80
+        ],
+        "popularity": 171.225,
+        "first_air_date": "2023-03-17",
+        "vote_average": 7.571,
+        "vote_count": 14,
+        "origin_country": [
+            "ES"
+        ]
     },
     {
-        "id": 878,
-        "name": "Ciencia ficción"
+        "adult": false,
+        "backdrop_path": "/4nXqYVnUJImG0HOAQ2QIryknuMC.jpg",
+        "id": 195868,
+        "name": "Gotham Knights",
+        "original_language": "en",
+        "original_name": "Gotham Knights",
+        "overview": "In the aftermath of Bruce Wayne's murder, his rebellious adopted son forges an unlikely alliance with the children of Batman's enemies when they are all framed for killing the Caped Crusader.",
+        "poster_path": "/tbCGmkR3TRDug4weDnHEGCu3WEC.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10759,
+            18
+        ],
+        "popularity": 970.724,
+        "first_air_date": "2023-03-14",
+        "vote_average": 8.3,
+        "vote_count": 15,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 10770,
-        "name": "Película de TV"
+        "adult": false,
+        "backdrop_path": "/2OMB0ynKlyIenMJWI2Dy9IWT4c.jpg",
+        "id": 1399,
+        "name": "Game of Thrones",
+        "original_language": "en",
+        "original_name": "Game of Thrones",
+        "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+        "poster_path": "/7WUHnWGx5OO145IRxPDUkQSh4C7.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765,
+            18,
+            10759
+        ],
+        "popularity": 526.569,
+        "first_air_date": "2011-04-17",
+        "vote_average": 8.436,
+        "vote_count": 20796,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 53,
-        "name": "Suspense"
+        "adult": false,
+        "backdrop_path": "/qO8uNvhYrBRKKWZLUdHrvwuuQpG.jpg",
+        "id": 95057,
+        "name": "Superman & Lois",
+        "original_language": "en",
+        "original_name": "Superman & Lois",
+        "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today's society.",
+        "poster_path": "/qJ6ndkbqgqS1n7ETi0YHhcjASym.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            10765,
+            18
+        ],
+        "popularity": 338.375,
+        "first_air_date": "2021-02-23",
+        "vote_average": 8.1,
+        "vote_count": 1898,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 10752,
-        "name": "Bélica"
+        "adult": false,
+        "backdrop_path": "/vmaiCsfTQ2SSfMSWsPHcFSubPpD.jpg",
+        "id": 78191,
+        "name": "You",
+        "original_language": "en",
+        "original_name": "You",
+        "overview": "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+        "poster_path": "/7bEYwjUvlJW7GerM8GYmqwl4oS3.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            9648,
+            80,
+            18
+        ],
+        "popularity": 355.399,
+        "first_air_date": "2018-09-09",
+        "vote_average": 8.113,
+        "vote_count": 2559,
+        "origin_country": [
+            "US"
+        ]
     },
     {
-        "id": 37,
-        "name": "Western"
+        "adult": false,
+        "backdrop_path": "/jXjXhryNh8f770U4pMa5dRCfVF4.jpg",
+        "id": 211240,
+        "name": "The Swarm",
+        "original_language": "en",
+        "original_name": "Der Schwarm",
+        "overview": "Mysterious events are piling up in the oceans around the world: whales destroy boats, deep-sea crabs attack beaches, mussels paralyze container ships. A previously unknown ice worm destabilizes continental slopes in the oceans and triggers tsunamis. A deadly pathogen is spreading from the coasts in drinking water. More and more people in the world are in mortal danger. On the feverish search for the causes of the mysterious phenomena, a small group of international scientists comes together and the previously unthinkable finally becomes a certainty. A previously unknown species exists in the sea and this swarm intelligence is attacking mankind. But hardly anyone believes the researchers. And so the group dares to go on a life-threatening mission on their own. The traces lead them with their research ship into the eternal ice of the Arctic Ocean. An ecological thriller based on the international bestselling novel by Frank Schätzing. The most expensive German TV production of all time.",
+        "poster_path": "/dAr6GCccudtiZHpzhquMg3TalvW.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            18,
+            10765,
+            9648
+        ],
+        "popularity": 218.017,
+        "first_air_date": "2023-03-06",
+        "vote_average": 6.7,
+        "vote_count": 30,
+        "origin_country": [
+            "DE"
+        ]
+    },
+    {
+        "adult": false,
+        "backdrop_path": "/lXzu1IZmzDulGeqqrknoE7c5hak.jpg",
+        "id": 110529,
+        "name": "Invisible City",
+        "original_language": "pt",
+        "original_name": "Cidade Invisível",
+        "overview": "An environmental police officer uncovers a hidden world of mythological entities from Brazilian folklore when he finds a connection between the mysterious appearance of a dead river dolphin on a Rio de Janeiro beach and the death of his beloved wife.",
+        "poster_path": "/i6v77Rcez8BEbsQ2FbUVfzs3yT2.jpg",
+        "media_type": "tv",
+        "genre_ids": [
+            9648,
+            18,
+            10765
+        ],
+        "popularity": 115.941,
+        "first_air_date": "2021-02-05",
+        "vote_average": 7.1,
+        "vote_count": 301,
+        "origin_country": [
+            "BR"
+        ]
     }
 ]

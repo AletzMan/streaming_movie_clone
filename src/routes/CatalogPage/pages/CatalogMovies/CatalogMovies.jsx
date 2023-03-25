@@ -1,10 +1,38 @@
-
+import { genresMovies, networksMovies } from "../../../../services/constants";
+import { SliderRating } from "../components/SliderRating/SliderRating";
+import { SliderSquare } from "../components/SliderSquare/SliderSquare";
+import { getTopMoves } from "../../../../services/fetchData";
+import { Loading } from "../../../../components/Loading";
 
 const CatalogMovies = () => {
+    const { loading, results } = getTopMoves();
+    let newData;
+
+    if (!loading) {
+        const today = new Date().getTime()
+        const resultNews = results[3][0].concat(results[3][1], results[3][2], results[3][3], results[3][4]);
+        newData = resultNews.filter(result => {
+            const date = new Date(result.release_date);
+            if (date - today > 0 && result.backdrop_path !== null) {
+                return result
+            }
+        })
+    }
+
     return (
-        <div>
-            CATALOG MOVIES
-        </div>
+        <section className='cataloghome'>
+            {!loading &&
+                <>
+                    <SliderRating data={results[0]} />
+                    <SliderSquare className={'slidernetworks'} data={networksMovies} title={'Networks'} isGeneral />
+                    <SliderSquare className={'slidersquare'} data={genresMovies} title={'Categorías'} isGeneral />
+                    <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} isRating />
+                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} isRating />
+                    <SliderSquare className={'sliderupcoming'} data={newData} title={'Próximamente'} />
+                </>
+            }
+            {loading && <Loading/>}
+        </section>
     );
 };
 
