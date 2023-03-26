@@ -10,6 +10,8 @@ const TOP_POPULAR_MOVIES_PATH = '/movie/popular?';
 const TOP_TRENDING_MOVIES_PATH = '/trending/movie/day?';
 const TOP_UPCOMMIG_MOVIES_PATH = '/movie/upcoming?';
 const DETAILS_SERIES_PATH = '/tv/';
+const DETAILS_MOVIES_PATH = '/movie/';
+const VIDEOS_SERIES_PATH = '/tv/';
 const LANGUAGE = 'es-MX'
 
 const config = {
@@ -60,10 +62,82 @@ export const getDetailsTVShows = (id) => {
             setLoading(false);
         }
         fetchData();
-    }, [])
+    }, [id])
 
     return {
         details,
+        loading
+    }
+}
+
+export const getSesionTVShows = (id, numberSesion) => {
+    const [season, setSeasons] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}${VIDEOS_SERIES_PATH}${id}/season/${numberSesion}?api_key=${config.apiKey}&language=${LANGUAGE}`);
+                setSeasons(response.episodes);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, [numberSesion])
+
+    return {
+        season,
+        loading
+    }
+}
+
+export const getSimilarTVShows = (id) => {
+    const [similarSearch, setSimilarSearch] = useState({});
+    const [loadingSimilar, setLoadingSearch] = useState(true);
+
+    useEffect(() => {
+        setLoadingSearch(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}${VIDEOS_SERIES_PATH}${id}/similar?api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
+                setSimilarSearch(response.results);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingSearch(false);
+        }
+        fetchData();
+    }, [])
+
+    return {
+        similarSearch,
+        loadingSimilar
+    }
+}
+
+export const getVideosTVShows = (id) => {
+    const [videos, setVideos] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}${VIDEOS_SERIES_PATH}${id}/videos?api_key=${config.apiKey}&language=${LANGUAGE}`);
+                setVideos(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, [])
+
+    return {
+        videos,
         loading
     }
 }
@@ -97,5 +171,81 @@ export const getTopMoves = () => {
     return {
         results,
         loading
+    }
+}
+
+
+export const getDetailsMovie = (id) => {
+    const [details, setDetails] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}${DETAILS_MOVIES_PATH}${id}?api_key=${config.apiKey}&language=${LANGUAGE}`);
+                setDetails(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, [id])
+
+    return {
+        details,
+        loading
+    }
+
+}
+
+
+export const getSimilarMovies = (id) => {
+    const [similarSearch, setSimilarSearch] = useState({});
+    const [loadingSimilar, setLoadingSearch] = useState(true);
+
+    useEffect(() => {
+        setLoadingSearch(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}${DETAILS_MOVIES_PATH}${id}/similar?api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
+                setSimilarSearch(response.results);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingSearch(false);
+        }
+        fetchData();
+    }, [])
+
+    return {
+        similarSearch,
+        loadingSimilar
+    }
+}
+
+
+export const getMoviesByCompanie = (id) => {
+    const [searchMovie, setSearchMovie] = useState({});
+    const [loadingMovie, setLoadingMovie] = useState(true);
+
+    useEffect(() => {
+        setLoadingMovie(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/discover/movie?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=popularity.desc&page=1&with_companies=${id}`);
+                setSearchMovie(response.results);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingMovie(false);
+        }
+        fetchData();
+    }, [])
+
+    return {
+        searchMovie,
+        loadingMovie
     }
 }

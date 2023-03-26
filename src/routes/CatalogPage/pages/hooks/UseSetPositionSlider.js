@@ -7,25 +7,27 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
     const [currentSlider, setCurrentSilder] = useState(0);
     const [touchStartPosition, setTouchStartPosition] = useState(0);
     const [sliderPositions, setSliderPosition] = useState(0);
-    let scrollWidthSlider = 0;
+    let scrollWidthSlider = window.innerWidth;
     let sizeTotalSlider = 0;
     const resizeWindow = () => {
         setWidthState(window.innerWidth);
     }
-    //console.log(scrollWidthSlider)
 
+   
 
     useEffect(() => {
-        window.addEventListener("resize", resizeWindow);
-        scrollWidthSlider = document.querySelector(slider).getBoundingClientRect().width;
-        sizeTotalSlider = document.querySelector(sizeSlider).scrollWidth;
-        if (isfullWidth) {
-            let paddingSlider = parseInt(window.getComputedStyle(document.querySelector(slider), null).getPropertyValue('padding-left').replace('px', ''));
-            
-            scrollWidthSlider = scrollWidthSlider - (paddingSlider * 0.6)
+        if (sizeSlider !== undefined) {
+            window.addEventListener("resize", resizeWindow);
+            scrollWidthSlider = slider.clientWidth;
+            sizeTotalSlider = sizeSlider.scrollWidth;
+            if (isfullWidth) {
+                let paddingSlider = parseInt(window.getComputedStyle(slider, null).getPropertyValue('padding-left').replace('px', ''));
+
+                scrollWidthSlider = scrollWidthSlider - (paddingSlider * 0.6)
+            }
+            setSliderPosition(sizeTotalSlider / scrollWidthSlider);
         }
-        setSliderPosition(sizeTotalSlider / scrollWidthSlider);
-        
+
         return () => {
             window.removeEventListener("resize", resizeWindow);
         };
@@ -62,7 +64,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
         }
 
         setTimeout(() => {
-            const finalPosScroll = document.querySelector(slider).scrollLeft;
+            const finalPosScroll = slider.scrollLeft;
             let posNear = [];
             for (let index = 0; index < 7; index++) {
                 posNear.push(((widthSlider * 2) * index) - finalPosScroll);
@@ -75,22 +77,27 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
 
     }
     useEffect(() => {
-        if (activaAuto) {
-            const sliderAuto = setInterval(() => {
-                if (currentSlider < 7)
-                    goToSlider(currentSlider + 1);
-                else
-                    goToSlider(0)
-            }, 3000);
-            return () => {
-                clearInterval(sliderAuto);
-            };
+        if (sizeSlider !== undefined) {
+            if (activaAuto) {
+                const sliderAuto = setInterval(() => {
+                    if (currentSlider < 7)
+                        goToSlider(currentSlider + 1);
+                    else
+                        goToSlider(0)
+                }, 3000);
+                return () => {
+                    clearInterval(sliderAuto);
+                };
+            }
         }
     }, [currentSlider]);
 
 
     useEffect(() => {
-        document.querySelector(slider).scroll(`${positionSliderScroll}`, 0);
+        if (sizeSlider && slider !== undefined) {
+            //slider.scrollLeft(`${positionSliderScroll}`, 0);
+            slider.scrollLeft = `${positionSliderScroll}`;
+        }
     }, [positionSlider, positionSliderScroll])
 
     return { goToSlider, setTouchSliderPosition, setTouchStart, currentSlider, sliderPositions }

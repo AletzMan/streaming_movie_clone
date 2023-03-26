@@ -23,12 +23,12 @@ const CatalogMovies = () => {
         <section className='cataloghome'>
             {!loading &&
                 <>
-                    <SliderRating data={results[0]} />
-                    <SliderSquare className={'slidernetworks'} data={networksMovies} title={'Networks'} isGeneral />
+                    <SliderRating data={results[0]} isMovie/>
+                    <SliderSquare className={'slidernetworks'} data={networksMovies} title={'Networks'} isGeneral isSquare isMovie/>
                     <SliderSquare className={'slidersquare'} data={genresMovies} title={'Categorías'} isGeneral />
-                    <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} isRating />
-                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} isRating />
-                    <SliderSquare className={'sliderupcoming'} data={newData} title={'Próximamente'} />
+                    <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} isRating isMovie/>
+                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} isRating isMovie/>
+                    <SliderSquare className={'sliderupcoming'} data={newData} title={'Próximamente'} isMovie/>
                 </>
             }
             {loading && <Loading/>}

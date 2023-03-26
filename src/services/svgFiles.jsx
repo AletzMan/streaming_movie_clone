@@ -127,9 +127,47 @@ const AddIcon = ({ className }) => {
 		<svg className={className} viewBox="0 0 32 32">
 			<path fill="currentColor" d="M16 2A14.172 14.172 0 0 0 2 16a14.172 14.172 0 0 0 14 14a14.172 14.172 0 0 0 14-14A14.172 14.172 0 0 0 16 2Zm8 15h-7v7h-2v-7H8v-2h7V8h2v7h7Z" />
 			<path fill="#22222299" stroke="0.5" d="M24 17h-7v7h-2v-7H8v-2h7V8h2v7h7v2z" />
-			</svg>
+		</svg>
 	);
 };
 export { AddIcon }
+
+const TrailerIcon = ({ className }) => {
+	return (
+		<svg className={className} width="24" height="24" viewBox="0 0 24 24">
+			<path  fill="currentColor" d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm.001 6c-.001 0-.001 0 0 0h-.465l-2.667-4H20l.001 4zM9.536 9L6.869 5h2.596l2.667 4H9.536zm5 0l-2.667-4h2.596l2.667 4h-2.596zM4 5h.465l2.667 4H4V5zm0 14v-8h16l.002 8H4z" />
+			<path  fill="currentColor" d="m10 18l5.5-3l-5.5-3z" />
+		</svg>
+	);
+};
+export { TrailerIcon }
+
+const AddTwoIcon = ({ className }) => {
+	return (
+		<svg className={className} width="36" height="36" viewBox="0 0 36 36">
+			<path fill="#00000" d="M30 17H19V6a1 1 0 1 0-2 0v11H6a1 1 0 0 0-1 1a.91.91 0 0 0 1 .94h11V30a1 1 0 1 0 2 0V19h11a1 1 0 0 0 1-1a1 1 0 0 0-1-1Z" />
+			<path fill="none" d="M0 0h36v36H0z" />
+		</svg>
+	);
+};
+export { AddTwoIcon }
+
+const CheckIcon = ({ className }) => {
+	return (
+		<svg className={className} width="256" height="256" viewBox="0 0 256 256">
+			<path fill="#000000" d="m228.24 76.24l-128 128a6 6 0 0 1-8.48 0l-56-56a6 6 0 0 1 8.48-8.48L96 191.51L219.76 67.76a6 6 0 0 1 8.48 8.48Z" />
+		</svg>
+	);
+};
+export { CheckIcon }
+
+const PlayTwoIcon = ({ className }) => {
+	return (
+		<svg className={className}  viewBox="0 0 24 24">
+			<path fill="#FFFFFF" d="M8 19V5l11 7l-11 7Z"/>
+			</svg>
+	);
+};
+export { PlayTwoIcon }
 
 
