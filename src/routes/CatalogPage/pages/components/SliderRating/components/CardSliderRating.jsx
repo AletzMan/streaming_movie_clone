@@ -2,14 +2,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { PlayIcon } from "../../../../../../services/svgFiles";
 const BASE_URL_IMG = 'https://image.tmdb.org/t/p/original'
 
-const CardSliderRating = ({ info }) => {
+const CardSliderRating = ({ info, isMovie }) => {
     const indexPoint = info.overview.indexOf('.');
     const navigate = useNavigate();
-    
-    const handlesButtonInfo = () => {
-        navigate('/catalog/details', {state: info.id});
-    }
 
+    const handlesButtonInfo = () => {
+        navigate('/catalog/details', { state: {id: info.id, isMovie: isMovie}});
+    }
+    
     return (
         <div className="ratslider">
             <img src={`${BASE_URL_IMG}${info.backdrop_path}`} alt='image movie of' className="ratslider__backdrop" />

@@ -246,7 +246,7 @@ export const genresMovies = [
 export const networksMovies = [
 
     {
-        id: 7429,
+        id: 3268,
         name: 'HBO',
         imageUrl: 'https://image.tmdb.org/t/p/original/mJ6wHYJUw44hTLIWz5d4K6nauQh.jpg',
         logoUrl: 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/7b17223a2213d2392c2273331cd5489afe38dd6a/hbo-logo.svg?token=AYKJOKK67RJEIILG3SOMGI3EDVFHW',
@@ -291,3 +291,6 @@ export const networksMovies = [
 ]
 
 export const BASE_URL_IMG = 'https://image.tmdb.org/t/p/original';
+
+
+export const IMG_DEFAULT = 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/main/streamin-movie-clone/6621261.webp';

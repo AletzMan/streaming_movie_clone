@@ -1,0 +1,148 @@
+$color_primary: #B535F6;
+$color_secondary: #FF00E5;
+$color_terciary: #7823d5;
+$color_button: #9832ed;
+$color_button_secondary: #C600FF;
+$color_background: #030328;
+$color_background_secondary: #020210;
+$color_primary_font: #9e86ff;
+$color_secondary_font: #FFFFFF;
+.combobox {
+    
+    &__select{
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        user-select: none;
+
+        &:checked ~ .combobox__arrow {
+            transform: rotate(180deg);
+        }
+        
+    }
+
+    &__textselected{
+        position: absolute;
+        left: 0.7rem;
+        top: calc(50% - 0.7rem);
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        user-select: none;
+        pointer-events: none;
+
+    }
+    
+    &__main{
+        position: absolute;
+        width: 100%;
+        max-height: 25rem;
+        background-color: #0f0f0f;
+        overflow: auto;
+        z-index: 1;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+          }
+        &::-webkit-scrollbar-track {
+            background: #414141; 
+            border-radius: 0px;
+          }
+        &::-webkit-scrollbar-thumb {
+            background: #5b1fc9;             
+            border-radius: 0px;
+          }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $color_terciary; 
+        }
+
+    }
+
+    &__arrow{
+        position: absolute;
+        transform: rotate(0deg);
+        width: 2rem;
+        height: 2rem;
+        top: calc(50% - 1rem);
+        right: 1rem;
+        bottom: 2rem;
+        pointer-events: none;
+    }
+
+    &__list {
+        position: relative;
+        height: 100%;
+        margin-left: 0.3rem;
+        border-radius: 0.3rem;
+        border: none;
+        background-color: #1f1f1f;
+    }
+    
+    &__container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        bottom: -100%;
+        padding: 0.1rem;
+        
+        &--true{
+            display: flex;
+            flex-direction: column;
+        }
+        &--false{
+            display: none;
+        }
+    }
+    
+    &__season {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        border: 1px solid #000000;
+        background-color: #202020;
+        z-index: 1;
+        
+
+        &:hover{
+            background-color: #353535;
+        }
+    }
+
+    &__option{
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 4rem;
+        cursor: pointer;
+        background-color: #aac268;
+
+        
+        &:checked ~ .combobox__check{
+            display: flex;
+        }
+    }
+
+    &__textoption{
+        flex: 70%;
+        height: 100%;
+        padding: 0.35rem 0;
+        user-select: none;
+        text-align: left;
+    }
+
+    &__check{
+        display: none;
+        filter: invert(1);
+        width: 2rem;
+        height: 2rem;
+        pointer-events: none;
+    }
+
+}

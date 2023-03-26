@@ -12,10 +12,10 @@ const CatalogSeries = () => {
             {!loading &&
                 <>
                     <SliderRating data={results[0]} />
-                    <SliderSquare className={'slidernetworks'} data={networksSeries} title={'Networks'} isGeneral />
+                    <SliderSquare className={'slidernetworks'} data={networksSeries} title={'Networks'} isGeneral isSquare/>
                     <SliderSquare className={'slidersquare'} data={genresSeries} title={'Categorías'} isGeneral />
-                    <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} />
-                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} />
+                    <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} isRating/>
+                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} isRating/>
                 </>
             }
             {loading && <Loading />}
