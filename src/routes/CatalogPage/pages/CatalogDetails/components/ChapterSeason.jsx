@@ -11,12 +11,7 @@ const loadinClip = new Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 function ChapterSeason({ details, serieID }) {
     const [seasonSelected, setSeasonSelected] = useState(1);
     const { season, loading } = getSesionTVShows(serieID, seasonSelected);
-    
-   //console.log(season)
-   console.log(details)
-   console.log(seasonSelected)
-
- 
+  
 
     return (
         <article className='seasons'>

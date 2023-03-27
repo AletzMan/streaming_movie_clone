@@ -29,7 +29,7 @@ export const getTopTVShows = () => {
             try {
                 const { data: responseRating } = await axios.get(`${API_URL_BASE}${TOP_RATING_SERIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
                 const { data: responsePopular } = await axios.get(`${API_URL_BASE}${TOP_POPULAR_SERIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
-                const { data: responseTrending } = await axios.get(`${API_URL_BASE}${TOP_TRENDING_SERIES_PATH}api_key=${config.apiKey}`);
+                const { data: responseTrending } = await axios.get(`${API_URL_BASE}${TOP_TRENDING_SERIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
                 setResults([responseRating.results, responsePopular.results, responseTrending.results]);
             } catch (error) {
                 console.error(error)
@@ -142,6 +142,80 @@ export const getVideosTVShows = (id) => {
     }
 }
 
+export const getTVShowsByCompanie = (id, page) => {
+    const [searchMovie, setSearchMovie] = useState({});
+    const [loadingMovie, setLoadingMovie] = useState(true);
+
+    useEffect(() => {
+        setLoadingMovie(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/discover/tv?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=vote_count.desc&page=${page}&with_companies=${id}`);
+                setSearchMovie(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingMovie(false);
+        }
+        fetchData();
+    }, [page])
+
+    return {
+        searchMovie,
+        loadingMovie
+    }
+}
+
+
+export const getTVShowCredits = (id) => {
+    const [credits, setCredits] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/tv/${id}/credits?api_key=${config.apiKey}&language=${LANGUAGE}`);
+                setCredits(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoading(false);
+        }
+        fetchData();
+    }, [])
+
+    return {
+        credits,
+        loading
+    }
+}
+
+export const getTVShowsByGenrer = (id, page) => {
+    const [searchMovie, setSearchMovie] = useState({});
+    const [loadingMovie, setLoadingMovie] = useState(true);
+
+    useEffect(() => {
+        setLoadingMovie(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/discover/tv?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=vote_count.desc&page=${page}&with_genres=${id}`);
+                setSearchMovie(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingMovie(false);
+        }
+        fetchData();
+    }, [page])
+
+    return {
+        searchMovie,
+        loadingMovie
+    }
+}
+
+
 export const getTopMoves = () => {
     const [results, setResults] = useState({});
     const [loading, setLoading] = useState(true);
@@ -152,7 +226,7 @@ export const getTopMoves = () => {
             try {
                 const { data: responseRating } = await axios.get(`${API_URL_BASE}${TOP_RATING_MOVIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
                 const { data: responsePopular } = await axios.get(`${API_URL_BASE}${TOP_POPULAR_MOVIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
-                const { data: responseTrending } = await axios.get(`${API_URL_BASE}${TOP_TRENDING_MOVIES_PATH}api_key=${config.apiKey}`);
+                const { data: responseTrending } = await axios.get(`${API_URL_BASE}${TOP_TRENDING_MOVIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=1`);
                 let responseUpcoming = new Array();
                 for (let index = 0; index < 5; index++) {
                     const { data: response } = await axios.get(`${API_URL_BASE}${TOP_UPCOMMIG_MOVIES_PATH}api_key=${config.apiKey}&language=${LANGUAGE}&page=${index + 1}`);
@@ -226,7 +300,7 @@ export const getSimilarMovies = (id) => {
 }
 
 
-export const getMoviesByCompanie = (id) => {
+export const getMoviesByCompanie = (id, page) => {
     const [searchMovie, setSearchMovie] = useState({});
     const [loadingMovie, setLoadingMovie] = useState(true);
 
@@ -234,15 +308,65 @@ export const getMoviesByCompanie = (id) => {
         setLoadingMovie(true);
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get(`${API_URL_BASE}/discover/movie?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=popularity.desc&page=1&with_companies=${id}`);
-                setSearchMovie(response.results);
+                const { data: response } = await axios.get(`${API_URL_BASE}/discover/movie?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=vote_count.desc&page=${page}&with_companies=${id}`);
+                setSearchMovie(response);
             } catch (error) {
                 console.error(error)
             }
             setLoadingMovie(false);
         }
         fetchData();
+    }, [page])
+
+    return {
+        searchMovie,
+        loadingMovie
+    }
+}
+
+
+export const getMovieCredits = (id) => {
+    const [credits, setCredits] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/movie/${id}/credits?api_key=${config.apiKey}&language=${LANGUAGE}`);
+                setCredits(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoading(false);
+        }
+        fetchData();
     }, [])
+
+    return {
+        credits,
+        loading
+    }
+}
+
+
+export const getMoviesByGenrer = (id, page) => {
+    const [searchMovie, setSearchMovie] = useState({});
+    const [loadingMovie, setLoadingMovie] = useState(true);
+
+    useEffect(() => {
+        setLoadingMovie(true);
+        const fetchData = async () => {
+            try {
+                const { data: response } = await axios.get(`${API_URL_BASE}/discover/movie?api_key=${config.apiKey}&language=${LANGUAGE}&sort_by=vote_count.desc&page=${page}&with_genres=${id}`);
+                setSearchMovie(response);
+            } catch (error) {
+                console.error(error)
+            }
+            setLoadingMovie(false);
+        }
+        fetchData();
+    }, [page])
 
     return {
         searchMovie,

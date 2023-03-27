@@ -135,8 +135,8 @@ export { AddIcon }
 const TrailerIcon = ({ className }) => {
 	return (
 		<svg className={className} width="24" height="24" viewBox="0 0 24 24">
-			<path  fill="currentColor" d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm.001 6c-.001 0-.001 0 0 0h-.465l-2.667-4H20l.001 4zM9.536 9L6.869 5h2.596l2.667 4H9.536zm5 0l-2.667-4h2.596l2.667 4h-2.596zM4 5h.465l2.667 4H4V5zm0 14v-8h16l.002 8H4z" />
-			<path  fill="currentColor" d="m10 18l5.5-3l-5.5-3z" />
+			<path fill="currentColor" d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm.001 6c-.001 0-.001 0 0 0h-.465l-2.667-4H20l.001 4zM9.536 9L6.869 5h2.596l2.667 4H9.536zm5 0l-2.667-4h2.596l2.667 4h-2.596zM4 5h.465l2.667 4H4V5zm0 14v-8h16l.002 8H4z" />
+			<path fill="currentColor" d="m10 18l5.5-3l-5.5-3z" />
 		</svg>
 	);
 };
@@ -163,11 +163,28 @@ export { CheckIcon }
 
 const PlayTwoIcon = ({ className }) => {
 	return (
-		<svg className={className}  viewBox="0 0 24 24">
-			<path fill="#FFFFFF" d="M8 19V5l11 7l-11 7Z"/>
-			</svg>
+		<svg className={className} viewBox="0 0 24 24">
+			<path fill="#FFFFFF" d="M8 19V5l11 7l-11 7Z" />
+		</svg>
 	);
 };
 export { PlayTwoIcon }
 
+const FinalPageIcon = ({ className }) => {
+	return (
+		<svg className={className} viewBox="0 0 24 24">
+			<path fill="currentColor" d="M18.25 3a.75.75 0 0 1 .743.648L19 3.75v16.5a.75.75 0 0 1-1.493.102l-.007-.102V3.75a.75.75 0 0 1 .75-.75Zm-13.03.22a.75.75 0 0 1 .976-.073l.084.073l8.25 8.25a.75.75 0 0 1 .073.976l-.073.084l-8.25 8.25a.75.75 0 0 1-1.133-.976l.073-.084L12.94 12L5.22 4.28a.75.75 0 0 1 0-1.06Z" />
+		</svg>
+	);
+};
+export { FinalPageIcon }
+
+const CircleIcon = ({ className, ref }) => {
+	return (
+		<svg className={className} width="44" height="44" viewBox="22 22 44 44">
+			<circle ref={ref} cx='44' cy='44' r='20.2' fill='none' strokeWidth='2' stroke='white' />
+		</svg>
+	)
+};
+export { CircleIcon }
 

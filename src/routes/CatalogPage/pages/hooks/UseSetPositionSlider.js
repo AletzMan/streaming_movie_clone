@@ -90,7 +90,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
                 };
             }
         }
-    }, [currentSlider]);
+    }, [currentSlider, slider]);
 
 
     useEffect(() => {

@@ -4,7 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#000000, #0c0c0c);
+  background: #363636;
+  background: #1F1F1F;
+  background: -webkit-radial-gradient(center, #1F1F1F, #010101);
+  background: -moz-radial-gradient(center, #1F1F1F, #010101);
+  background: radial-gradient(ellipse at center, #1F1F1F, #010101);
 }
 
 .catalog__section {

@@ -11,11 +11,11 @@ const CatalogSeries = () => {
         <section className='cataloghome'>
             {!loading &&
                 <>
-                    <SliderRating data={results[0]} />
+                    <SliderRating data={results[2]} />
                     <SliderSquare className={'slidernetworks'} data={networksSeries} title={'Networks'} isGeneral isSquare/>
-                    <SliderSquare className={'slidersquare'} data={genresSeries} title={'Categorías'} isGeneral />
+                    <SliderSquare className={'slidersquare'} data={genresSeries} title={'Categorías'} isGeneral isGenrer/>
                     <SliderSquare className={'sliderpopular'} data={results[1]} title={'Popular'} isRating/>
-                    <SliderSquare className={'slidertrending'} data={results[2]} title={'Trending'} isRating/>
+                    <SliderSquare className={'slidertrending'} data={results[0]} title={'Las más valoradas'} isRating/>
                 </>
             }
             {loading && <Loading />}

@@ -12,8 +12,6 @@ function ComboBox({ className, data, setState, state }) {
     const handleChangeSeason = (e) => {
         setState(e.target.value)
     }
-    console.log(data)
-
     return (
         <div className={className} >
             <div name="seasons" className='combobox__list' onChange={handleViewOptions} >
