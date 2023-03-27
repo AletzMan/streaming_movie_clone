@@ -44,21 +44,32 @@
   text-align: left;
   padding: 1rem 0;
 }
+.infodetails__genres {
+  margin: 0 0.4rem;
+}
 .infodetails__watch {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  flex: 20%;
-  width: 15%;
-  max-width: 7.5rem;
-  max-height: 3.5rem;
-  border-radius: 0.25rem;
   text-align: center;
   background-color: transparent;
   border: 2px solid #FFFFFF;
   cursor: pointer;
   transition: all 0.3s;
+  border-radius: 0.3rem;
+}
+.infodetails__watch--false {
+  max-width: 7.5rem;
+  max-height: 3.5rem;
+  border-radius: 0.25rem;
+  flex: 20%;
+  width: 15%;
+}
+.infodetails__watch--true {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 2rem;
 }
 .infodetails__watch:hover {
   border-color: #7823d5;
@@ -79,7 +90,8 @@
 .infodetails__addcontainer {
   position: relative;
   flex: 20%;
-  margin-left: 1rem;
+  align-self: center;
+  margin: 0 1rem;
 }
 .infodetails__addcontainer:hover {
   background-color: #ffffff35;
@@ -122,6 +134,30 @@
 }
 .infodetails__trailerbutton:hover {
   opacity: 1;
+}
+
+.informationmovie {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.9rem;
+  flex: 100%;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  align-self: center;
+  max-height: 3rem;
+  align-items: center;
+  background-color: #e0e0e035;
+  border-radius: 0.5rem;
+  max-width: max-content;
+}
+.informationmovie__time {
+  color: #b1b1ff;
+}
+.informationmovie__classification {
+  color: #ffffff;
+}
+.informationmovie__rating {
+  color: #81ec6c;
 }
 
 .seasons {

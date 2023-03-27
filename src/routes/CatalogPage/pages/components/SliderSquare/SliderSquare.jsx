@@ -6,7 +6,7 @@ import { MovieSlider } from './components/MovieSlider';
 import { useRef } from 'react';
 
 
-function SliderSquare({ data, title, isGeneral, isRating, isSquare, isMovie }) {
+function SliderSquare({ data, title, isGeneral, isRating, isSquare, isMovie, isGenrer }) {
     //console.log(data)
     const referenceSlider = useRef();
     const referenceContainer = useRef();
@@ -25,7 +25,7 @@ function SliderSquare({ data, title, isGeneral, isRating, isSquare, isMovie }) {
                 <div className={`slider__slider`} ref={referenceSlider}>
                     <div className={`slider__cards slider`}>
                         {isGeneral && dataDetails.map(info => (
-                            <GeneralSlider key={info.id} info={info} isSquare={isSquare}  isMovie={isMovie}/>
+                            <GeneralSlider key={info.id} info={info} isSquare={isSquare}  isMovie={isMovie} isGenrer={isGenrer}/>
                         ))}
                         {!isGeneral && dataDetails.map((info, index) => (
                             <MovieSlider key={info.id} info={info} rating={index} isRating={isRating} isMovie={isMovie}/>

@@ -54,21 +54,35 @@ $color_secondary_font: #FFFFFF;
         padding: 1rem 0;
     }
 
+    &__genres{
+        margin: 0 0.4rem;
+    }
+
     &__watch {
         display: flex;
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
-        flex: 20%;
-        width: 15%;
-        max-width: 7.5rem;
-        max-height: 3.5rem;
-        border-radius: 0.25rem;
+
         text-align: center;
         background-color: transparent;
         border: 2px solid #FFFFFF;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.3s;border-radius:0.3rem;
+
+        &--false {
+            max-width: 7.5rem;
+            max-height: 3.5rem;
+            border-radius: 0.25rem;
+            flex: 20%;
+            width: 15%; 
+        }
+
+        &--true {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 2rem;
+        }
 
         &:hover {
             border-color: $color_terciary;
@@ -93,7 +107,8 @@ $color_secondary_font: #FFFFFF;
     &__addcontainer {
         position: relative;
         flex: 20%;
-        margin-left: 1rem;
+        align-self: center;
+        margin:0 1rem;
 
         &:hover {
             background-color: #ffffff35;
@@ -151,6 +166,36 @@ $color_secondary_font: #FFFFFF;
             opacity: 1;
         }
 
+    }
+}
+
+.informationmovie{
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.9rem;
+    flex: 100%;
+    text-align: left;
+    padding: 0.6rem 1rem;
+    align-self: center;
+    max-height: 3rem;
+    align-items: center;
+    background-color: #e0e0e035;
+    border-radius: 0.5rem;
+    max-width: max-content;
+
+    &__time{
+        color: #b1b1ff;
+    }
+
+    &__classification{
+        color: #ffffff;
+    }
+
+    &__year{
+    }
+
+    &__rating{
+        color: #81ec6c;
     }
 }
 
@@ -275,6 +320,7 @@ $color_secondary_font: #FFFFFF;
         cursor: pointer;
         border: 2px solid transparent;
         background-color: transparent;
+
         &:hover>.chapter__image {
             border-color: $color_button;
         }

@@ -1,0 +1,184 @@
+.resultsearch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #020210;
+  padding: 5rem 0 0 0;
+}
+.resultsearch__scrolltop {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background-color: #5b19a1;
+  transition: all 0.2s;
+  box-shadow: 0 0 5px 5px #bcabfd75;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+.resultsearch__scrolltop:hover {
+  background-color: #7e67da;
+  box-shadow: 0 0 5px 5px #9e86ff75;
+}
+.resultsearch__arrowtop {
+  width: 2rem;
+  height: 2rem;
+}
+.resultsearch__title {
+  font-weight: 500;
+}
+.resultsearch__name {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  backdrop-filter: blur(2px);
+  border: 1px solid #b775fd65;
+  background-color: #5b19a185;
+}
+.resultsearch__vote {
+  position: absolute;
+  left: 0;
+  bottom: 0rem;
+  width: 3rem;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.3rem;
+  backdrop-filter: blur(2px);
+  border: 1px solid #b775fd65;
+  background-color: #a18d1985;
+}
+.resultsearch__section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.8rem;
+  width: 100%;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .resultsearch__section {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  }
+}
+.resultsearch__container {
+  position: relative;
+  width: 100%;
+  max-width: 18rem;
+  background-color: #020210;
+}
+@media (max-width: 768px) {
+  .resultsearch__container {
+    max-width: 10rem;
+  }
+}
+.resultsearch__container:hover > .resultsearch__playcontainer {
+  display: flex;
+  opacity: 1;
+}
+.resultsearch__container:hover > .resultsearch__addcontainer {
+  display: flex;
+  opacity: 1;
+}
+.resultsearch__container:hover > .resultsearch__name {
+  display: block;
+  opacity: 1;
+}
+.resultsearch__addcontainer {
+  display: none;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.resultsearch__addcontainer:hover {
+  box-shadow: 0 0 2px 3px #FFFFFF, 0 0 2px 3px #FFFFFF inset;
+}
+.resultsearch__addcontainer:hover ~ .resultsearch__play > .resultsearch__image {
+  border-color: #9832ed;
+  box-shadow: 0 0 5px 5px #9e86ff65;
+}
+.resultsearch__addicon {
+  display: flex;
+  width: 2.2rem;
+  pointer-events: none;
+}
+.resultsearch__checkicon {
+  display: none;
+}
+.resultsearch__playcontainer {
+  display: none;
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  bottom: 1.5rem;
+  right: 4rem;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.resultsearch__playcontainer:hover {
+  box-shadow: 0 0 2px 3px #FFFFFF, 0 0 2px 3px #FFFFFF inset;
+}
+.resultsearch__playcontainer:hover ~ .resultsearch__play > .resultsearch__image {
+  border-color: #9832ed;
+  box-shadow: 0 0 5px 5px #9e86ff65;
+}
+.resultsearch__playcontainer:hover {
+  border-color: #9832ed;
+}
+.resultsearch__playicon {
+  filter: invert(1);
+}
+.resultsearch__play {
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: #9f9fc413;
+  min-height: 12rem;
+  height: 100%;
+}
+.resultsearch__play:hover > .resultsearch__image {
+  border-color: #9832ed;
+  box-shadow: 0 0 5px 5px #9e86ff65;
+}
+.resultsearch__image {
+  width: 100%;
+  object-fit: cover;
+  opacity: 1;
+  pointer-events: none;
+  animation: animationLoad 0.3s linear;
+  object-fit: cover;
+  border: 2px solid transparent;
+  padding: 0.15rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s;
+}
+.resultsearch__check:checked ~ .resultsearch__addicon {
+  display: none;
+}
+.resultsearch__check:checked ~ .resultsearch__checkicon {
+  display: flex;
+}
+.resultsearch__pages {
+  display: flex;
+  flex-direction: row;
+  row-gap: 2rem;
+  width: 80%;
+  align-self: center;
+  justify-content: space-evenly;
+  margin: 1.5rem 0;
+}
