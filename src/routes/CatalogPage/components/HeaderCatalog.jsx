@@ -1,18 +1,23 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { MenuIcon, SearchIcon } from "../../../services/svgFiles";
 import logo from '../../../assets/logo-page.svg';
 import '../styles/CatalogPageStyles.css';
 import { LateralMenu } from "./LateralMenu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const HeaderCatalog = () => {
+    const navigate = useNavigate();
     const [stateMenuLateral, setStateMenuLateral] = useState(false);
     const param = useParams();
     const nameClass = param.page;
+    const profileInfo = localStorage.getItem('user');
 
+    
     const handleMenuState = () => {
-        console.log(stateMenuLateral)
         setStateMenuLateral(prevState => !prevState);
-        console.log(stateMenuLateral)
+    }
+
+    const handleGoToPage = (id) => {
+        navigate(`/catalog/search`, { state: { isSearch: true, isMovie: true } });
     }
     
     return (
@@ -26,14 +31,14 @@ const HeaderCatalog = () => {
                 <NavLink to='/' className='navcatalog__home'>
                     <img className='navcatalog__logo' src={logo} />
                 </NavLink>
-                <NavLink to='/catalog/search' className={`navcatalog__search navcatalog__search--${nameClass}`}>
+                <button  onClick={handleGoToPage} className={`navcatalog__search navcatalog__search--${nameClass}`}>
                     <SearchIcon />
-                </NavLink>
+                </button>
                 <NavLink className='navcatalog__profile userprofile'>
                     <div className="userprofile__logo">
-                        <span className="userprofile__initial">A</span>
+                        <span className="userprofile__initial">{profileInfo.substring(0, 1)}</span>
                     </div>
-                    <span className="userprofile__name navcatalog__link">Maria Jose</span>
+                    <span className="userprofile__name navcatalog__link">{profileInfo}</span>
                 </NavLink>
             </nav>
             <LateralMenu stateMenuLateral={stateMenuLateral} setStateMenuLateral={setStateMenuLateral}/>

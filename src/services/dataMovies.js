@@ -168,36 +168,12 @@ export const discoverMovies = [
 
 export const questions = [
     {
-        question: '¿Que es HBO Max?',
-        response: 'HBO Max es la nueva plataforma de streaming que reúne todos los contenidos de HBO junto con aún más éxitos de taquilla, series generadoras de obsesión y exclusivos Max Originals.'
+        question: '¿Que es Streaming Movie?',
+        response: 'Streaming Movie es una plataforma que reune los datos de la mayoría películas y series'
     },
     {
-        question: '¿HBO Max tiene prueba gratis?',
-        response: 'HBO Max, junto a la mayoría de los proveedores de HBO Max, ya no ofrecen una prueba gratuita a los nuevos suscriptores. Si una suscripción u oferta promocional incluye una prueba gratuita, verás una mención de la prueba gratuita cuando te suscribas.'
-    },
-    {
-        question: '¿Donde puedo ver HBO Max en Mexico?',
-        response: 'Para obtener una lista de proveedores de TV, Internet y telefonía que ofrecen HBO Max, puedes hacer lo siguiente: En la esquina superior derecha de esta pagina, selecciona INGRESA. Selecciona Iniciar sesión con un proveedor. Selecciona Ver todos los proveedores. Aquí podrás encontrar una lista de todos los proveedores que ofrecen HBO Max en tu región. También puedes ir a la página de Elige tu proveedor y buscar tu proveedor.'
-    },
-    {
-        question: '¿Cuanto cuesta el servicio de HBO Max?',
-        response: 'HBO Max está disponible a través de múltiples proveedores y los precios varían de acuerdo al país. Para información de precios, visita HBOMax.com.'
-    },
-    {
-        question: '¿Cuales son lo estrenos de HBO Max?',
-        response: 'Cada mes tenemos estrenos de peliculas y series. Muchos de ellos los puedes conseguir en nuestra pagina de Proximos Estrenos.'
-    },
-    {
-        question: '¿Tiene algun costo extra ver HBO Max desde mi celular o tablet?',
-        response: 'Con el plan estándar puedes disfrutar todo el catálogo en todas tus pantallas, incluyendo smartphone y tableta.'
-    },
-    {
-        question: '¿HBO Max tiene control para menores de edad?',
-        response: 'Si, puedes crear un perfil Infantil para cada uno de tus niños, con controles parentales que limitan el contenido que se puede ver.'
-    },
-    {
-        question: '¿Donde ver La Casa Del Dragón en Mexico?',
-        response: 'Los nuevos episodios de La Casa del Dragón, la muy esperada precuela de Juego de Tronos, están disponibles cada semana, con un final de temporada que tendrá lugar el 23 de octubre de 2022. La Casa del Dragón está disponible en 4K Ultra HD, HDR 10, Dolby Vision y Dolby Atmos (en dispositivos seleccionados con el plan estándar).'
+        question: '¿Que es Streaming Movie?',
+        response: 'Streaming Movie es una plataforma que reune los datos de la mayoría películas y series'
     }
 ]
 

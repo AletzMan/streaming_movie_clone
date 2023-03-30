@@ -1,12 +1,4 @@
-$color_primary: #B535F6;
-$color_secondary: #FF00E5;
-$color_terciary: #7823d5;
-$color_button: #9832ed;
-$color_button_secondary: #C600FF;
-$color_background: #030328;
-$color_background_secondary: #020210;
-$color_primary_font: #9e86ff;
-$color_secondary_font: #FFFFFF;
+@import '../../../../Styles/GeneralStyles';
 
 
 .details {
@@ -46,12 +38,26 @@ $color_secondary_font: #FFFFFF;
         padding: 1rem;
     }
 
+    &__tagline{
+        flex: 100%;
+        text-align: left;
+        padding: 0 0 1rem 0;
+        border-radius: 0.2rem;
+        color: #e7ce5d;
+    }
+
     &__name {
         flex: 100%;
         font-size: 2.5rem;
         font-weight: 400;
         text-align: left;
-        padding: 1rem 0;
+        padding: 1rem 1rem 0.5rem 0;
+
+        @media (max-width: 500px) {
+            font-size: 1.8rem;
+        }
+
+        
     }
 
     &__genres{
@@ -166,6 +172,32 @@ $color_secondary_font: #FFFFFF;
             opacity: 1;
         }
 
+    }
+
+    &__companie{
+        width: 10rem;
+        height: 10rem;
+        background-color: #f3a4ec;
+    }
+
+    &__companieimage{
+        width: 100%;
+    }
+}
+
+.companiesinfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items:center;
+    justify-content: flex-start;
+    padding: 1rem;
+    
+    &__companie{
+        width: 100%;
+        text-align: left;
+        color: #efbefd;
     }
 }
 
@@ -410,8 +442,6 @@ $color_secondary_font: #FFFFFF;
         }
     }
 }
-
-
 
 
 

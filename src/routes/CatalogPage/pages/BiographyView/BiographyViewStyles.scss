@@ -1,0 +1,67 @@
+@import '../../../Styles/GeneralStyles';
+
+.biographyview{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 100%;
+    padding: 2rem;
+    row-gap: 2rem;
+}
+
+.biography{
+    width: 100%;
+    max-width: 60rem;
+    display: flex;  
+    column-gap: 2rem;  
+    flex-flow: row wrap;
+    align-self: center;
+    background-color: #19111a;
+    padding: 0.5rem;
+    
+    @media (max-width: 960px) {
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.1rem;
+
+        @media (max-width: 960px) {
+            align-items: center;
+        }
+    }
+
+    &__name{
+        text-align: left;
+    }
+    
+    &__date{
+        text-align: left;
+    }
+    
+    &__place{
+        text-align: left;
+    }
+    
+
+    &__photo{
+        max-width: 10rem;
+        border: 1px solid #FFFFFF54;
+        border-radius: 0.2rem;
+        justify-self: center;
+        align-self: center;
+    }
+    
+    &__description{
+        max-width: 40rem;
+        text-align: left;
+        letter-spacing: 0.05rem;
+        line-height: 1.3rem;
+        max-height: 35rem;
+        overflow-y: auto;
+    }
+}

@@ -1,13 +1,4 @@
-$color_primary: #B535F6;
-$color_secondary: #FF00E5;
-$color_terciary: #7823d5;
-$color_button: #9832ed;
-$color_button_secondary: #C600FF;
-$color_background: #030328;
-$color_background_secondary: #020210;
-$color_primary_font: #9e86ff;
-$color_secondary_font: #FFFFFF;
-
+@import '../../../../../Styles/GeneralStyles';
 
 .slider {
 
@@ -20,10 +11,15 @@ $color_secondary_font: #FFFFFF;
         overflow-y: hidden;
         overflow-x: auto;
         scroll-behavior: smooth;
+        scroll-snap-type: x mandatory ;
 
         &::-webkit-scrollbar {
             display: none;
         }
+    }
+
+    &__box{
+        width: 100%;
     }
 
     &__main {
@@ -71,10 +67,11 @@ $color_secondary_font: #FFFFFF;
 
     &__button {
         position: absolute;
-        top: calc(50% - 1.25rem);
+        top: calc(50%);
         width: 3rem;
         height: 2rem;
-        background-color: #FFFFFF15;
+        background-color: #FFFFFF20;
+        backdrop-filter: blur(3px);
         border-radius: 0.3rem;
         border: none;
         border: 1px solid transparent;
@@ -128,7 +125,7 @@ $color_secondary_font: #FFFFFF;
     &__card--rectangle {
         position: relative;
         width: 100%; 
-        padding: 0.25rem;
+        padding: 0.4rem;
         border: 2px solid transparent;
         transition: all 0.3s;
         background-color: transparent;
@@ -157,12 +154,13 @@ $color_secondary_font: #FFFFFF;
         }
 
         &:hover>.slider__image--rectangle {
-            transform: scale(1.01);
+            //transform: scale(1.01);
         }
 
         &:hover {
 
             border-color: $color_terciary;
+            box-shadow: 0 0 3px 1px $color_terciary inset;
         }
     }
 
@@ -182,6 +180,7 @@ $color_secondary_font: #FFFFFF;
         bottom: 0rem;
         width: 100%;
         max-height: 8rem;
+        padding: 0.4rem;
         border-radius: 0 1rem 0 0;
         background: linear-gradient(transparent 0%, #FFFFFF11 20%, #77777755 100%);
     }
@@ -260,7 +259,7 @@ $color_secondary_font: #FFFFFF;
         border-color: transparent;
         font-weight: 600;
         letter-spacing: 0.06rem;
-        padding: 0.25rem;
+        padding: 0.35rem;
         transition: all 0.4s;
         background-color: transparent;
         border-radius: 0.25rem;
@@ -291,9 +290,7 @@ $color_secondary_font: #FFFFFF;
         &:hover {
 
             border-color: $color_terciary;
-        }
-        &:hover>.slider__image--general {
-            transform: scale(1.01);
+            box-shadow: 0 0 3px 1px $color_terciary inset;
         }
 
         &:hover>.slider__name--general {
@@ -321,7 +318,8 @@ $color_secondary_font: #FFFFFF;
         font-size: 1.2rem;
         font-weight: 400;
         bottom: 0.5rem;
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(4px);
+        color: #eeeeee;
 
         @media (max-width:409px) {
             font-size: 1rem;
@@ -354,7 +352,7 @@ $color_secondary_font: #FFFFFF;
 
     &__card--details {
         position: relative;
-        padding: 0.2rem;
+        padding: 0.35rem;
         border: 2px solid transparent;
         transition: all 0.3s;
         background-color: transparent;
@@ -393,13 +391,11 @@ $color_secondary_font: #FFFFFF;
             display: block;
         }
 
-        &:hover>.slider__image--details,
-        &:hover>.slider__image--details,
-        &:hover>.slider__image--details {
-            opacity: 1;
-        }
-        &:hover>.slider__image--details {
-            transform: scale(1.01);
+        
+        &:hover {
+
+            border-color: $color_terciary;
+            box-shadow: 0 0 3px 1px $color_terciary inset;
         }
     }
 
@@ -408,6 +404,15 @@ $color_secondary_font: #FFFFFF;
         height: 100%;
         object-fit: cover;
         transition: all 0.3s;
+        padding: 0.3rem;
+    }
+
+    &__name--details{
+        position: absolute;
+        bottom: -0.35rem;
+        font-size: 0.9rem;
+        left: 0.6rem;
+        color: #eeeeee;
     }
 
     &__add--details {
@@ -433,8 +438,8 @@ $color_secondary_font: #FFFFFF;
 
     &__rating--details {
         position: absolute;
-        right: 0.2rem;
-        top: 0.2rem;
+        right: 0.3rem;
+        top: 0.3rem;
         width: 3rem;
         height: 3rem;
         font-size: 2rem;
@@ -442,7 +447,8 @@ $color_secondary_font: #FFFFFF;
         padding: 0.3rem 0;
         text-align: center;
         background-color: #6820bb66;
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(4px);
+        color: #eeeeee;
 
         @media (max-width:600px) {
             font-size: 1.25rem;
@@ -463,7 +469,8 @@ $color_secondary_font: #FFFFFF;
         padding: 0.3rem 0.2rem;
         text-align: center;
         background-color: #6820bb66;
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(4px);
+        color: #eeeeee;
 
         &--false{
             display: none;

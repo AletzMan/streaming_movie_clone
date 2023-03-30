@@ -8,7 +8,7 @@ const Promo = () => {
         <section className='homepage__promo promo'>
                 <video className='promo__video' src={videoIntro} type="video/mp4" muted autoPlay playsInline loop></video>
                 <div className="promo__container">
-                    <span className='promo__title'>2023 LO TENDRÁ TODO</span>
+                    <h1 className='promo__title'>2023 LO TENDRÁ TODO</h1>
                     <img className='promo__img' src={promo} alt='ahorra tres meses' />
                     <span className='promo__plan'>CON EL PLAN ANUAL</span>
                     <NavLink className='promo__subscribe button' to={'plan-picker'} data='SUSCRÍBETE AHORA'>SUSCRÍBETE AHORA</NavLink>

@@ -1,16 +1,7 @@
-$color_primary: #B535F6;
-$color_secondary: #FF00E5;
-$color_terciary: #7823d5;
-$color_button: #9832ed;
-$color_button_secondary: #C600FF;
-$color_background: #030328;
-$color_background_secondary: #020210;
-$color_primary_font: #9e86ff;
-$color_secondary_font: #FFFFFF;
-
+@import '../../../../Styles/GeneralStyles';
 
 .pagenavigator {
-    width: 50%;
+    width: 60%;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     align-self: center;
@@ -20,7 +11,7 @@ $color_secondary_font: #FFFFFF;
 
     @media (max-width: 768px) {
         width: 100%;
-        gap: 0.5rem;
+        gap: 0.35rem;
     }
 
     &__controls {
@@ -84,10 +75,16 @@ $color_secondary_font: #FFFFFF;
 
     }
 
+    &__page{
+        border: none;
+        background-color: #222229;
+    }
+
     &__pages {
+        position: relative;
         grid-column: 3 / 4;
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         align-self: center;
         gap: 0.2rem;
         border-radius: 2rem;
@@ -99,13 +96,21 @@ $color_secondary_font: #FFFFFF;
             gap: 0rem;
         }
     }
-
+    
+    
     &__number {
-        padding: 0.5rem;
-        min-width: 2.2rem;
+        padding: 0.2rem 0.1rem;
+        min-width: 3.5rem;
+        text-align: center;
+        font-size: 1rem;
         
         @media (max-width: 768px) {
-            padding: 0.4rem;
+            padding: 0.4rem 0;
+            min-width: 2.9rem;
         }
+    }
+    
+    &__pagename{
+        color: transparent;
     }
 }

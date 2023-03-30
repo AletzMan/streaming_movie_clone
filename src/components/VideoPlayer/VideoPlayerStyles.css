@@ -1,0 +1,70 @@
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #79429e;
+}
+
+.videotrailer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #00000088;
+  backdrop-filter: blur(15px);
+  z-index: 2;
+}
+.videotrailer__video {
+  border: 1px solid #83838399;
+  border-radius: 1rem;
+}
+.videotrailer__controls {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 97.3%;
+  height: 4rem;
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(90deg, #151515 0%, #151515 50%, #15151544 95%, transparent 100%);
+  pointer-events: none;
+}
+.videotrailer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  border: 2px solid transparent;
+  margin: 0 0 0 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s;
+  pointer-events: all;
+}
+.videotrailer__close:hover {
+  background-color: #313131;
+}
+.videotrailer__title {
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+}
+.videotrailer__name {
+  color: #b97bfc;
+}
+.videotrailer__iconclose {
+  width: 2rem;
+  height: 2rem;
+}
+.videotrailer__error {
+  width: 100%;
+  margin: 10rem 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  background-color: #c9c9c925;
+  color: #ffffff;
+}

@@ -15,7 +15,7 @@ const CardSliderRating = ({ info, isMovie }) => {
             <img src={`${BASE_URL_IMG}${info.backdrop_path}`} alt='image movie of' className="ratslider__backdrop" />
             <div className="ratslider__container">
                 <div className="ratslider__options">
-                    <span className="ratslider__title">{info?.name?.substring(0, 22) || info?.title?.substring(0, 25)}</span>
+                    <span className="ratslider__title">{info?.name|| info?.title}</span>
                     <p className="ratslider__sinopsis">{info.overview.substring(0, indexPoint)}</p>
                     <NavLink className='ratslider__play'>
                         <PlayIcon className='ratslider__play--icon' />

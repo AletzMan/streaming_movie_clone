@@ -10,8 +10,9 @@ const SliderRating = ({ data, isMovie }) => {
     const containerRef = useRef();
     const arrayMovies = data.filter((movie => movie.overview !== '')).filter((movie, index) => { if (index < 8) return movie });
 
-    const { goToSlider, setTouchSliderPosition, setTouchStart, currentSlider } = useSetPositionSlider(sliderRef.current, containerRef.current, true);
+    const { goToSlider, setTouchSliderPosition, setTouchStart, currentSlider } = useSetPositionSlider(sliderRef.current, containerRef.current, true, true);
 
+    
     return (
         <div className="sliderrating">
             <div className="sliderrating__slider" ref={containerRef}>

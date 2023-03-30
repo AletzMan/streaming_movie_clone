@@ -1,9 +1,9 @@
 
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { CircleProgressBar } from '../../../../components/CircleProgessBar/CircleProgressBar';
+import { VideoPlayer } from '../../../../components/VideoPlayer/VideoPLayer';
 import { BASE_URL_IMG } from '../../../../services/constants';
-import { getDetailsMovie, getDetailsTVShows, getSimilarMovies, getSimilarTVShows } from '../../../../services/fetchData';
+import { getCollections, getDetailsMovie, getDetailsTVShows } from '../../../../services/fetchData';
 import { AddTwoIcon, CheckIcon, PlayTwoIcon, TrailerIcon } from '../../../../services/svgFiles';
 import { SectionCredits } from '../components/SectionCredits/SectionCredits';
 import { SliderSquare } from '../components/SliderSquare/SliderSquare';
@@ -11,11 +11,21 @@ import { ChapterSeason } from './components/ChapterSeason';
 import './styles/CatalogDetailsStyles.css';
 
 const CatalogDetails = () => {
+    const [videoView, setVideoView] = useState(false);
+    const [dataVideo, setDataVideo] = useState(null);
     const movieOrSerieID = useLocation().state.id;
     const isMovie = useLocation().state.isMovie;
 
     const { loading, details } = isMovie ? getDetailsMovie(movieOrSerieID) : getDetailsTVShows(movieOrSerieID);
-    const { loadingSimilar, similarSearch } = isMovie ? getSimilarMovies(movieOrSerieID) : getSimilarTVShows(movieOrSerieID);
+    const { loadingCollection, searchCollection } = getCollections(details?.belongs_to_collection?.id);
+
+
+    function handleCloseVideo(value) {
+        setVideoView(value);
+        setDataVideo(details);
+    }
+
+    console.log(details)
 
     return (
         <section className='cataloghome'>
@@ -28,7 +38,8 @@ const CatalogDetails = () => {
                                 <span key={genrer.id} className='infodetails__genres'>{`${genrer.name}`}</span>
                             ))}
                             <h2 className="infodetails__name">{details?.name || details?.title}</h2>
-                            <button className={`infodetails__watch infodetails__watch--${isMovie}`}>
+                            <span className="infodetails__tagline">{details.tagline}</span>
+                            <button className={`infodetails__watch infodetails__watch--${isMovie}`} onClick={() => handleCloseVideo(true)}>
                                 <PlayTwoIcon className='infodetails__watchicon' />
                                 {!isMovie && <span className="infodetails__watchsession">S1 E1</span>}
                             </button>
@@ -45,17 +56,28 @@ const CatalogDetails = () => {
                                 </div>
                             }
                             <p className="infodetails__synopsis">{details.overview}</p>
-                            <button className="infodetails__trailerbutton">
+                            <button className="infodetails__trailerbutton" onClick={() => handleCloseVideo(true)}>
                                 <TrailerIcon className={'infodetails__icontrailer'} />
                                 <span className="infodetails__texttrailer">TRAILER</span>
                             </button>
                         </div>
-                        {/*<iframe width="100%" height="315" src="https://www.youtube.com/embed/mXd1zTwcQ18"  title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>*/}
+
                     </div>
-                    {isMovie && <SectionCredits id={details.id} isMovie={isMovie} />}
+                    <article className='infodetails__companies companiesinfo'>
+                        {details.production_companies.map(companie => (
+                            <div key={companie.id} className='companiesinfo__companie'>
+                                <span className='companiesinfo__companie'>{companie.name}</span>
+                            </div>
+                        ))}
+                    </article>
+                    {(videoView && !loading) &&
+                        <VideoPlayer details={dataVideo} urlVideo={details.videos} closeVideo={handleCloseVideo} />
+                    }
+                    {(!loading && isMovie) && <SectionCredits credits={details.credits} isMovie={isMovie} />}
                     {!isMovie && <ChapterSeason details={details} serieID={details.id} />}
-                    {!isMovie && <SectionCredits id={details.id} />}
-                    {!loadingSimilar && <SliderSquare data={similarSearch} title={'Recomendaciones similires'} isMovie={isMovie} />}
+                    {(!loading && !isMovie) && <SectionCredits credits={details.credits} />}
+                    {(!loadingCollection && searchCollection !== 404) && <SliderSquare data={searchCollection.parts} title={'De la misma colección'} isMovie={isMovie} />}
+                    {!loading && <SliderSquare data={details.similar.results} title={'Recomendaciones similires'} isMovie={isMovie} />}
                 </>
             }
         </section>

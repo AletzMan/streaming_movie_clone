@@ -1,3 +1,10 @@
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #79429e;
+}
+
 .slider__container {
   position: relative;
   display: flex;
@@ -7,9 +14,13 @@
   overflow-y: hidden;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 .slider__container::-webkit-scrollbar {
   display: none;
+}
+.slider__box {
+  width: 100%;
 }
 .slider__main {
   position: relative;
@@ -41,14 +52,15 @@
   font-family: "Urbanist", sans-serif;
 }
 .slider__card:hover {
-  border-color: #7823d5;
+  border-color: #79429e;
 }
 .slider__button {
   position: absolute;
-  top: calc(50% - 1.25rem);
+  top: calc(50%);
   width: 3rem;
   height: 2rem;
-  background-color: #FFFFFF15;
+  background-color: #FFFFFF20;
+  backdrop-filter: blur(3px);
   border-radius: 0.3rem;
   border: none;
   border: 1px solid transparent;
@@ -95,7 +107,7 @@
 .slider__card--rectangle {
   position: relative;
   width: 100%;
-  padding: 0.25rem;
+  padding: 0.4rem;
   border: 2px solid transparent;
   transition: all 0.3s;
   background-color: transparent;
@@ -126,11 +138,9 @@
     min-height: 20rem;
   }
 }
-.slider__card--rectangle:hover > .slider__image--rectangle {
-  transform: scale(1.01);
-}
 .slider__card--rectangle:hover {
-  border-color: #7823d5;
+  border-color: #79429e;
+  box-shadow: 0 0 3px 1px #79429e inset;
 }
 .slider__image--rectangle {
   width: 100%;
@@ -146,6 +156,7 @@
   bottom: 0rem;
   width: 100%;
   max-height: 8rem;
+  padding: 0.4rem;
   border-radius: 0 1rem 0 0;
   background: linear-gradient(transparent 0%, #FFFFFF11 20%, #77777755 100%);
 }
@@ -218,7 +229,7 @@
   border-color: transparent;
   font-weight: 600;
   letter-spacing: 0.06rem;
-  padding: 0.25rem;
+  padding: 0.35rem;
   transition: all 0.4s;
   background-color: transparent;
   border-radius: 0.25rem;
@@ -250,10 +261,8 @@
   }
 }
 .slider__card--general:hover {
-  border-color: #7823d5;
-}
-.slider__card--general:hover > .slider__image--general {
-  transform: scale(1.01);
+  border-color: #79429e;
+  box-shadow: 0 0 3px 1px #79429e inset;
 }
 .slider__card--general:hover > .slider__name--general {
   color: #dca3ff;
@@ -273,7 +282,8 @@
   font-size: 1.2rem;
   font-weight: 400;
   bottom: 0.5rem;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  color: #eeeeee;
 }
 @media (max-width: 409px) {
   .slider__name--general {
@@ -301,7 +311,7 @@
 }
 .slider__card--details {
   position: relative;
-  padding: 0.2rem;
+  padding: 0.35rem;
   border: 2px solid transparent;
   transition: all 0.3s;
   background-color: transparent;
@@ -309,7 +319,7 @@
   cursor: pointer;
 }
 .slider__card--details:hover {
-  border-color: #7823d5;
+  border-color: #79429e;
 }
 @media (max-width: 409px) {
   .slider__card--details {
@@ -338,17 +348,23 @@
 .slider__card--details:hover > .slider__add--details, .slider__card--details:hover > .slider__add--details, .slider__card--details:hover > .slider__add--details {
   display: block;
 }
-.slider__card--details:hover > .slider__image--details, .slider__card--details:hover > .slider__image--details, .slider__card--details:hover > .slider__image--details {
-  opacity: 1;
-}
-.slider__card--details:hover > .slider__image--details {
-  transform: scale(1.01);
+.slider__card--details:hover {
+  border-color: #79429e;
+  box-shadow: 0 0 3px 1px #79429e inset;
 }
 .slider__image--details {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: all 0.3s;
+  padding: 0.3rem;
+}
+.slider__name--details {
+  position: absolute;
+  bottom: -0.35rem;
+  font-size: 0.9rem;
+  left: 0.6rem;
+  color: #eeeeee;
 }
 .slider__add--details {
   position: absolute;
@@ -369,8 +385,8 @@
 }
 .slider__rating--details {
   position: absolute;
-  right: 0.2rem;
-  top: 0.2rem;
+  right: 0.3rem;
+  top: 0.3rem;
   width: 3rem;
   height: 3rem;
   font-size: 2rem;
@@ -378,7 +394,8 @@
   padding: 0.3rem 0;
   text-align: center;
   background-color: #6820bb66;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  color: #eeeeee;
 }
 @media (max-width: 600px) {
   .slider__rating--details {
@@ -398,7 +415,8 @@
   padding: 0.3rem 0.2rem;
   text-align: center;
   background-color: #6820bb66;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  color: #eeeeee;
 }
 .slider__date--details--false {
   display: none;

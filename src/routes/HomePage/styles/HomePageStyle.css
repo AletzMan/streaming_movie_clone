@@ -1,19 +1,29 @@
 @charset "UTF-8";
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #79429e;
+}
+
 .homepage {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .homeheader {
   position: fixed;
   display: grid;
+  top: 0;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
   height: 3.7rem;
   background-color: #03032845;
   backdrop-filter: blur(5px);
-  z-index: 1;
+  z-index: 2;
 }
 .homeheader__link {
   justify-self: flex-start;
@@ -58,7 +68,7 @@
 }
 .homeheader__subscribe:hover {
   background-color: #FFFFFF;
-  color: #030328;
+  color: #0f0f0f;
 }
 .homeheader__nav {
   display: flex;
@@ -85,6 +95,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   margin: 3.7rem 0 0 0;
+  width: 100%;
 }
 .promo__container {
   display: flex;
@@ -102,7 +113,7 @@
   }
 }
 .promo__title {
-  background: linear-gradient(90deg, #5f1981, #FF00E5, #7823d5);
+  background: linear-gradient(90deg, #5f1981, #FF00E5, #79429e);
   padding: 0.1rem 0.8rem;
   font-size: 1.4rem;
   font-weight: 400;
@@ -112,7 +123,8 @@
 @media (max-width: 575px) {
   .promo__title {
     font-size: 1rem;
-    width: 50%;
+    width: 60%;
+    padding: 0.1rem 0.2rem;
   }
 }
 .promo__img {
@@ -148,9 +160,9 @@
   padding: 0.5rem 1.4rem;
   border-radius: 4rem;
   text-decoration: none;
-  border: 2px solid #7823d5;
+  border: 2px solid #79429e;
   color: #FFFFFF;
-  background: linear-gradient(345deg, #7823d5 0%, #9832ed 33%, transparent 66%, transparent 100%) 99% 50%/400% 400%;
+  background: linear-gradient(345deg, #79429e 0%, #9832ed 33%, transparent 66%, transparent 100%) 99% 50%/400% 400%;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -179,10 +191,10 @@
   width: 100%;
   height: 100%;
   padding: 2.5rem 0 0 0;
-  background-image: url("../../../assets/plans_background.png");
   background-repeat: no-repeat;
+  backdrop-filter: opacity(1);
   background-position: right;
-  box-shadow: 0 0 15px 50px #03032888, 0 0 20px 50px #03032888 inset;
+  box-shadow: 0 0 15px 50px #17171b88, 0 0 100px 50px #1f1f1f88 inset;
 }
 .plans__title {
   font-size: 1.85rem;
@@ -279,6 +291,7 @@
   max-width: 29rem;
   min-height: 21rem;
   align-items: center;
+  justify-self: center;
   padding: 0.1rem 2.5rem 1.6rem 2.5rem;
   background: linear-gradient(#ffffff10, transparent);
   border-radius: 0.5rem;
@@ -298,16 +311,16 @@
   }
 }
 .card__true {
-  border: 2px solid #7823d5;
+  border: 2px solid #79429e;
 }
 .card__title {
   position: absolute;
-  top: -2rem;
-  background: linear-gradient(45deg, #7823d5, #B535F6);
-  width: 10rem;
+  top: -1.2rem;
+  background: linear-gradient(45deg, #79429e, #B535F6);
+  max-width: 12rem;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.3rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 2rem;
 }
 .card__months {
@@ -345,7 +358,7 @@
   width: 100%;
   margin: 0.15rem 0 1rem 0;
   padding: 3.2rem 0 0 0;
-  background: linear-gradient(#05053688 0%, #05053699 50%, #c82cf028 74%, #07074d77 90%, #05053677 100%);
+  background: linear-gradient(#03030388 0%, #19192099 50%, #3a1a4928 74%, #0e0e1177 90%, #0a0a0a77 100%);
 }
 .premieres__title {
   width: 80%;
@@ -423,7 +436,7 @@
   position: relative;
   display: grid;
   grid-column: 1/2;
-  grid-row: 2/span 4;
+  grid-row: 3/span 4;
 }
 @media (max-width: 575px) {
   .cardpremiere__info {
@@ -442,7 +455,7 @@
   grid-row: 1/2;
   grid-column: 1/2;
   justify-self: flex-start;
-  align-self: flex-end;
+  align-self: flex-start;
   text-align: left;
   font-size: 1.5rem;
   font-weight: 500;
@@ -457,20 +470,22 @@
 }
 .cardpremiere__date {
   position: relative;
-  grid-row: 1/2;
+  grid-row: 2/3;
   grid-column: 1/2;
   justify-self: flex-start;
-  height: 1.2rem;
-  padding: 0.4rem 0.6rem;
+  padding: 0.25rem 0.6rem 0.1rem 0.6rem;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  background: linear-gradient(45deg, #7823d5, #B535F6, #580970);
+  background: linear-gradient(45deg, #79429e, #B535F6, #580970);
   color: #FFFFFF;
 }
 @media (max-width: 575px) {
   .cardpremiere__date {
+    position: absolute;
+    top: 0rem;
+    right: 0;
     width: 100%;
     justify-self: center;
     align-self: flex-end;
@@ -478,6 +493,7 @@
     font-size: 1.05rem;
     font-weight: 400;
     letter-spacing: 0.08rem;
+    z-index: 1;
   }
 }
 .cardpremiere__sinopsis {
@@ -610,6 +626,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  grid-row: 5/6;
 }
 .actorpremiere__image {
   width: 4rem;
@@ -932,13 +949,14 @@
 .questions__title {
   font-size: 2rem;
   font-weight: 300;
+  margin: 0 0 1rem 0;
 }
 
 .question {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #030328;
+  background-color: #0f0f0f;
 }
 .question__button {
   position: relative;
@@ -953,7 +971,7 @@
   justify-self: flex-start;
   font-size: 1.3rem;
   font-weight: 300;
-  padding: 0.4rem 0 1.5rem 0;
+  padding: 0.4rem 0 1.5rem 0.8rem;
   text-align: left;
   color: #9e86ff;
 }
@@ -963,7 +981,7 @@
   text-align: left;
   font-size: 1.3rem;
   font-weight: 300;
-  padding: 1rem 0 0 0;
+  padding: 1rem 0.5rem 0.2rem 0.8rem;
   letter-spacing: 0.06rem;
   height: 0rem;
   opacity: 0;

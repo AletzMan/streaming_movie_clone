@@ -1,6 +1,7 @@
 
 import { HashRouter,  Route, Routes } from 'react-router-dom';
 import './App.css';
+import '../src/routes/Styles/_GeneralStyles.css';
 import { CatalogPage } from './routes/CatalogPage/CatalogPage';
 import { CreateAccountPage } from './routes/CreateAccountPage/CreateAccountPage';
 import { HomePage } from './routes/HomePage/HomePage';
@@ -21,6 +22,9 @@ function App() {
             <Route path='create-account' element={<CreateAccountPage />} />
             <Route path='catalog' element={<CatalogPage />} />
             <Route path='catalog/:page' element={<><CatalogPage /></>} />
+            <Route path='catalog/:page/:movie' element={<><CatalogPage /></>} />
+            <Route path='catalog/:page/:movie/:id' element={<><CatalogPage /></>} />
+            <Route path='catalog/:page/:actor' element={<><CatalogPage /></>} />
          </Routes>
       </HashRouter>
    )

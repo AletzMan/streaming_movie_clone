@@ -1,5 +1,12 @@
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #7823d5;
+}
+
 .pagenavigator {
-  width: 50%;
+  width: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
   align-self: center;
@@ -10,7 +17,7 @@
 @media (max-width: 768px) {
   .pagenavigator {
     width: 100%;
-    gap: 0.5rem;
+    gap: 0.35rem;
   }
 }
 .pagenavigator__controls {
@@ -66,10 +73,15 @@
     width: 1rem;
   }
 }
+.pagenavigator__page {
+  border: none;
+  background-color: #222229;
+}
 .pagenavigator__pages {
+  position: relative;
   grid-column: 3/4;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-self: center;
   gap: 0.2rem;
   border-radius: 2rem;
@@ -83,11 +95,17 @@
   }
 }
 .pagenavigator__number {
-  padding: 0.5rem;
-  min-width: 2.2rem;
+  padding: 0.2rem 0.1rem;
+  min-width: 3.5rem;
+  text-align: center;
+  font-size: 1rem;
 }
 @media (max-width: 768px) {
   .pagenavigator__number {
-    padding: 0.4rem;
+    padding: 0.4rem 0;
+    min-width: 2.9rem;
   }
+}
+.pagenavigator__pagename {
+  color: transparent;
 }

@@ -13,31 +13,35 @@ function SliderSquare({ data, title, isGeneral, isRating, isSquare, isMovie, isG
     const dataDetails = data.filter(serie => serie.poster_path !== null);
     const { goToSlider, currentSlider, sliderPositions } = useSetPositionSlider(referenceSlider?.current, referenceContainer?.current, false, true);
 
-    
-    const handlerButton =()=>{
+
+    const handlerButton = () => {
         goToSlider(currentSlider - 1)
     }
-
+    
     return (
         <div className={`slider__main`}>
             <h2 className={`slider__title`}>{title}</h2>
-            <div className={`slider__container`}  ref={referenceContainer}>
+            <div className={`slider__container`} ref={referenceContainer}>
                 <div className={`slider__slider`} ref={referenceSlider}>
                     <div className={`slider__cards slider`}>
                         {isGeneral && dataDetails.map(info => (
-                            <GeneralSlider key={info.id} info={info} isSquare={isSquare}  isMovie={isMovie} isGenrer={isGenrer}/>
+                            <div key={info.id}  className='slider__box'>
+                                <GeneralSlider info={info} isSquare={isSquare} isMovie={isMovie} isGenrer={isGenrer} />
+                            </div>
                         ))}
                         {!isGeneral && dataDetails.map((info, index) => (
-                            <MovieSlider key={info.id} info={info} rating={index} isRating={isRating} isMovie={isMovie}/>
+                             <div key={info.id}  className='slider__box'>
+                            <MovieSlider info={info} rating={index} isRating={isRating} isMovie={isMovie} />
+                            </div>
                         ))}
                     </div>
                 </div>
             </div>
             <div className={`slider__controls`}>
-                {currentSlider > 0 && <button className={`slider__left slider__button`} onClick={handlerButton }>
+                {currentSlider > 0 && <button className={`slider__left slider__button`} onClick={handlerButton}>
                     <ArrowIcon className={`slider__button--arrow`} />
                 </button>}
-                {currentSlider <= sliderPositions  && <button className={`slider__right slider__button`} onClick={() => goToSlider(currentSlider + 1)}>
+                {((currentSlider < sliderPositions) || currentSlider === 0) && <button className={`slider__right slider__button`} onClick={() => goToSlider(currentSlider + 1)}>
                     <ArrowIcon className={`slider__button--arrow`} />
                 </button>}
             </div>

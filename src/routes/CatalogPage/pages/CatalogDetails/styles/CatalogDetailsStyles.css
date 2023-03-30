@@ -1,3 +1,10 @@
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #79429e;
+}
+
 .details {
   position: relative;
   width: 100%;
@@ -37,12 +44,24 @@
     padding: 1rem;
   }
 }
+.infodetails__tagline {
+  flex: 100%;
+  text-align: left;
+  padding: 0 0 1rem 0;
+  border-radius: 0.2rem;
+  color: #e7ce5d;
+}
 .infodetails__name {
   flex: 100%;
   font-size: 2.5rem;
   font-weight: 400;
   text-align: left;
-  padding: 1rem 0;
+  padding: 1rem 1rem 0.5rem 0;
+}
+@media (max-width: 500px) {
+  .infodetails__name {
+    font-size: 1.8rem;
+  }
 }
 .infodetails__genres {
   margin: 0 0.4rem;
@@ -72,7 +91,7 @@
   border-radius: 2rem;
 }
 .infodetails__watch:hover {
-  border-color: #7823d5;
+  border-color: #79429e;
 }
 .infodetails__watchicon {
   flex: 20%;
@@ -134,6 +153,29 @@
 }
 .infodetails__trailerbutton:hover {
   opacity: 1;
+}
+.infodetails__companie {
+  width: 10rem;
+  height: 10rem;
+  background-color: #f3a4ec;
+}
+.infodetails__companieimage {
+  width: 100%;
+}
+
+.companiesinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.companiesinfo__companie {
+  width: 100%;
+  text-align: left;
+  color: #efbefd;
 }
 
 .informationmovie {
