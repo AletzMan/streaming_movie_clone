@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-page.svg';
 import { Loading } from '../../components/Loading';
 import './styles/ProfileSelectStyles.css';
 
 const ProfileSelectPage = () => {
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    function handleGoToPage(name) {
+        navigate('/catalog/movies');
+        localStorage.setItem( 'user', name);
+    }
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -21,22 +28,22 @@ const ProfileSelectPage = () => {
                 </a>
                 <h1 className="profileselect__title">¿Quien esta viendo?</h1>
                 <div className="profiles__container">
-                    <NavLink to='/catalog/movies' className="profileselect__container profiles">
+                    <button className="profileselect__container profiles" onClick={()=>handleGoToPage('Aletz')}>
                         <div className="profiles__logo"></div>
                         <span className="profiles__initial">A</span>
                         <span className="profiles__name">Aletz</span>
-                    </NavLink>
-                    <a href='/' className="profileselect__container profiles">
+                    </button>
+                    <button className="profileselect__container profiles" onClick={()=>handleGoToPage('Invitado')}>
                         <div className="profiles__logo"></div>
                         <span className="profiles__initial">G</span>
                         <span className="profiles__name">Invitado</span>
-                    </a>
+                    </button>
                 </div>
                 <div className="profileselect__buttons addbuttons">
-                    <NavLink className="addbuttons__button">AÑADIR ADULTO</NavLink>
-                    <NavLink className="addbuttons__button">AÑADIR NIÑO</NavLink>
+                    <NavLink className="addbuttons__button">Añadir adulto</NavLink>
+                    <NavLink className="addbuttons__button">Añadir niño</NavLink>
                 </div>
-                <NavLink className="profileselect__manage">GESTIONAR PERDILES</NavLink>
+                <NavLink className="profileselect__manage">Gestionar perfiles</NavLink>
             </>}
             {!loading && <Loading />}
         </main>

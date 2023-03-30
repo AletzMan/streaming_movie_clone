@@ -1,14 +1,27 @@
 
+import uuid from 'react-uuid';
 import { ArrowIcon, FinalPageIcon } from '../../../../../services/svgFiles';
 import './PageNavigatorStyles.css';
 
 function PageNavigator({ currentPage, totalPage, setPageState }) {
 
+
+    let arrayPages = [];
+    if (totalPage > 0) {
+        for (let index = 0; index < totalPage; index++) {
+            arrayPages.push(index + 1);
+        }
+    }
     const handleCurrentPage = (position, isFirstOrEnd) => {
         if (isFirstOrEnd)
             setPageState(position)
         else
             setPageState(prevState => prevState + position);
+    }
+
+    function handleChangePage(e) {
+        if (e.target.value !== '')
+            setPageState(e.target.value)
     }
 
     return (
@@ -24,7 +37,11 @@ function PageNavigator({ currentPage, totalPage, setPageState }) {
                 </>
             }
             <div className="pagenavigator__pages">
-                <span className="pagenavigator__page pagenavigator__number">{currentPage}</span>
+                <select type='number' className="pagenavigator__page pagenavigator__number" onChange={handleChangePage} value={currentPage || ''}>
+                    {arrayPages.map(page => (
+                        <option key={uuid()} value={page}>{page}</option>
+                    ))}
+                </select>
                 <span className="pagenavigator__of pagenavigator__number">de</span>
                 <span className="pagenavigator__totalpages  pagenavigator__number">{totalPage}</span>
             </div>

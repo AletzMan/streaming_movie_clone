@@ -1,12 +1,4 @@
-$color_primary: #B535F6;
-$color_secondary: #FF00E5;
-$color_terciary: #7823d5;
-$color_button: #9832ed;
-$color_button_secondary: #C600FF;
-$color_background: #030328;
-$color_background_secondary: #020210;
-$color_primary_font: #9e86ff;
-$color_secondary_font: #FFFFFF;
+@import '../../Styles/GeneralStyles';
 
 
 .profileselect {
@@ -14,7 +6,8 @@ $color_secondary_font: #FFFFFF;
     height: 100vh;
     min-width: 20rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-image: url('https://play.hbomax.com/390f9937ad43fc0e763143a8fcd3fb0a.png');
     background-position: left top;
@@ -37,12 +30,11 @@ $color_secondary_font: #FFFFFF;
     }
 
     &__manage {
-        width: 10rem;
         font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
         padding: 0.7rem;
-        margin: 0 0 2rem 0;
+        margin: 1rem 0 2rem 0;
         align-self: center;
         color: $color_secondary_font;
         border-radius: 0.2rem;
@@ -67,10 +59,18 @@ $color_secondary_font: #FFFFFF;
     margin: 0rem 0 5rem 0;
     justify-self: center;
     text-decoration: none;
+    align-items: center;
     color: $color_secondary_font;
     font-weight: 400;
     transition: transform 0.3s;
     animation: animationProfiles 0.4s ;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 500px) {
+        margin: 0;
+    }
 
     &__container {
         display: flex;
@@ -78,6 +78,10 @@ $color_secondary_font: #FFFFFF;
         justify-self: center;
         column-gap: 3rem;
         margin: 10rem 0 7rem 0 ;
+
+        @media (max-width: 500px) {
+            column-gap: 2rem;
+        }
     }
 
     &:hover {
@@ -125,6 +129,10 @@ $color_secondary_font: #FFFFFF;
     gap: 1rem;
     align-self: center;
     margin: 2rem 0 0 0;
+
+    @media (max-width: 500px) {
+        margin: 1rem 0 0 0;
+    }
 
     &__button {
         padding: 0.9rem 1.5rem;

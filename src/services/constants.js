@@ -1,3 +1,4 @@
+import uuid from "react-uuid";
 
 
 export const genresSeries = [
@@ -292,5 +293,82 @@ export const networksMovies = [
 
 export const BASE_URL_IMG = 'https://image.tmdb.org/t/p/original';
 
+export const MENU_OPTIONS = [
+    {
+        id: uuid(),
+        name: 'Home',
+        link: '/'
+    },
+    {
+        id: uuid(),
+        name: 'Series',
+        link: '/catalog/series'
+    },
+    {
+        id: uuid(),
+        name: 'Películas',
+        link: '/catalog/movies'
+    }/*,
+    {
+        id: uuid(),
+        name: 'Originales',
+        link: ''
+    },
+    {
+        id: uuid(),
+        name: 'Recien agregado',
+        link: ''
+    },
+    {
+        id: uuid(),
+        name: 'Última oportunidad',
+        link: ''
+    },
+    {
+        id: uuid(),
+        name: 'Última oportunidad',
+        link: ''
+    },
+    {
+        id: uuid(),
+        name: 'Muy pronto',
+        link: ''
+    },
+    {
+        id: uuid(),
+        name: 'Trending',
+        link: ''
+    }*/
+]
 
-export const IMG_DEFAULT = 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/main/streamin-movie-clone/6621261.webp';
+export const IMG_DEFAULT = 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/main/streamin-movie-clone/Image_not_available_view.jpg';
+
+export const IMG_DEFAULT_PROFILE = 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/main/streamin-movie-clone/Image_not_available.jpg';
+export const IMG_DEFAULT_MOVIE = 'https://raw.githubusercontent.com/AletzMan/ImagesStorage/main/streamin-movie-clone/Image_not_available_movie.jpg';
+
+const yearsSearch = () => {
+    let years = [];
+    for (let index = 1600; index < 2024; index++) {
+        years.push(index);
+    }
+    return years;
+}
+
+export const typeSearch = {
+    type: [
+        {
+            id: uuid(),
+            season_number: 1,
+            name: 'Películas',
+            value: 'movie'
+        },
+        {
+            id: uuid(),
+            season_number: 2,
+            name: 'Series',
+            value: 'tv'
+        }
+    ],
+    year: yearsSearch,
+
+}

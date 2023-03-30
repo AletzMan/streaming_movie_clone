@@ -19,6 +19,10 @@
   scroll-behavior: smooth;
 }
 
-body{
-  background: #030328;
+body{ 
+  background: #363636;
+  background: #1F1F1F;
+  background: -webkit-radial-gradient(center, #1F1F1F, #010101);
+  background: -moz-radial-gradient(center, #1F1F1F, #010101);
+  background: radial-gradient(ellipse at center, #1F1F1F, #010101);
 }

@@ -1,3 +1,10 @@
+.cardslider:hover > .slider__image {
+  transform: scale(1.01);
+}
+.cardslider:hover {
+  border-color: #7823d5;
+}
+
 .login {
   display: flex;
   flex-direction: column;

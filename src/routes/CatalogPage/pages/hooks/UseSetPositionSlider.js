@@ -13,7 +13,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
         setWidthState(window.innerWidth);
     }
 
-   
+
 
     useEffect(() => {
         if (sizeSlider !== undefined) {
@@ -25,7 +25,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
 
                 scrollWidthSlider = scrollWidthSlider - (paddingSlider * 0.6)
             }
-            setSliderPosition(sizeTotalSlider / scrollWidthSlider);
+            setSliderPosition(Math.floor(sizeTotalSlider / scrollWidthSlider));
         }
 
         return () => {
@@ -35,6 +35,7 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
 
     const goToSlider = (number) => {
         let valuePosition = number * (scrollWidthSlider);
+
         setPositionSliderScroll(valuePosition);
         setCurrentSilder(number);
         setTimeout(() => {
@@ -77,20 +78,21 @@ export function useSetPositionSlider(sizeSlider, slider, activaAuto, isfullWidth
 
     }
     useEffect(() => {
-        if (sizeSlider !== undefined) {
-            if (activaAuto) {
-                const sliderAuto = setInterval(() => {
-                    if (currentSlider < 7)
-                        goToSlider(currentSlider + 1);
-                    else
-                        goToSlider(0)
-                }, 3000);
-                return () => {
-                    clearInterval(sliderAuto);
-                };
-            }
+        let sliderAuto
+        if (activaAuto) {
+            sliderAuto = setInterval(() => {
+                console.log('IN')
+                if (currentSlider < 7)
+                    goToSlider(currentSlider + 1);
+                else
+                    goToSlider(0)
+            }, 3000);
         }
-    }, [currentSlider, slider]);
+        return () => {
+            clearInterval(sliderAuto);
+        };
+
+    }, [currentSlider, slider, sizeSlider]);
 
 
     useEffect(() => {

@@ -10,7 +10,7 @@ const Question = ({ options }) => {
     }
     return (
         <div className='questions__container question'>
-            <input className='question__checkbox' name="question" defaultChecked={opened} type='radio' onMouseUp={opendDetailStatus} />
+            <input className='question__checkbox' name="question" defaultChecked={opened} type='checkbox' onChange={opendDetailStatus} />
             <div className='question__button'>
                 <span className="question__text">{options.question}</span>
                 <svg className='question__svg' height="128px" viewBox="0 0 128 128" width="128px">

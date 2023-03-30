@@ -1,8 +1,12 @@
 import { premieres } from '../../../../services/dataMovies';
+import { getTrendingTVShows } from '../../../../services/fetchData';
+import { SliderRating } from '../../../CatalogPage/pages/components/SliderRating/SliderRating';
 import { CardPremiere } from './CardPremiere';
 import { SliderControl } from './SliderControl';
 
 const Premieres = () => {
+const {loadingTrendingTV, treandingTV } = getTrendingTVShows();
+
     return (
         <section className='homepage__premieres premieres'>
             <h2 className='premieres__title'>Estrenos que se convertirán en nuevos favoritos.</h2>
@@ -16,6 +20,7 @@ const Premieres = () => {
                 </div>
             </div>
                 <SliderControl />
+                {/*!loadingTrendingTV && <SliderRating data={treandingTV.results}/>*/}
         </section>
     );
 };

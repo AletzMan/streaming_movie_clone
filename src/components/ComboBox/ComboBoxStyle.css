@@ -25,6 +25,7 @@
   background-color: #0f0f0f;
   overflow: auto;
   z-index: 1;
+  background: #FF00E5;
 }
 .combobox__main::-webkit-scrollbar {
   width: 8px;
@@ -53,10 +54,14 @@
 .combobox__list {
   position: relative;
   height: 100%;
-  margin-left: 0.3rem;
+  margin-left: 0rem;
+  height: 100%;
   border-radius: 0.3rem;
   border: none;
   background-color: #1f1f1f;
+}
+.combobox__list--true {
+  opacity: 0.5;
 }
 .combobox__container {
   position: absolute;
