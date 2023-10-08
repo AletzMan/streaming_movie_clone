@@ -20,19 +20,12 @@ _(Puedes agregar aquí capturas de pantalla de tu aplicación si lo deseas)_
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone https://github.com/tu-usuario/tu-repositorio.git
-
-
 2. Ve al directorio del proyecto:
    ```bash
    cd tu-repositorio
-
-
 3. Instala las dependencias:
      ```bash
          npm install
-
-
-
 ## Uso
 
 1. Inicia la aplicación:
