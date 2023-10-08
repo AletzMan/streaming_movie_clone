@@ -28,8 +28,8 @@ _(Puedes agregar aquí capturas de pantalla de tu aplicación si lo deseas)_
 
 
 3. Instala las dependencias:
-  ```bash
-   npm install
+     ```bash
+         npm install
 
 
 
